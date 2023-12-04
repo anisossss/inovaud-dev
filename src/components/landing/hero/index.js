@@ -16,14 +16,7 @@ export const Hero = () => {
           <Text h3>Votre vision, nos solutions</Text>
         </Fade>
         <br></br>
-        <Grid className="pyramid1">
-          <Image
-            src={"/assets/landing/pyramid_1.svg"}
-            width={300}
-            height={200}
-            objectFit="contain"
-          />
-        </Grid>
+
         <Grid className="blue_path">
           <Image
             src={"/assets/landing/path.svg"}

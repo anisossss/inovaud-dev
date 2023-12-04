@@ -6,7 +6,7 @@ import { Hero } from "../components/landing/hero";
 import { Solution } from "../components/landing/solution";
 import { Services } from "../components/landing/services";
 import { Rdv } from "../components/landing/rdv";
-import Newsletter from "../components/landing/newsletter";
+// import Newsletter from "../components/landing/newsletter";
 
 const Home = () => {
   return (

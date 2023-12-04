@@ -68,9 +68,9 @@ export const Nav = () => {
         </Link>
       </Navbar.Brand>
       <Navbar.Content hideIn={isXlScreen && isBeyondXl ? "xl" : "md"}>
-        <ActiveLink href="/discover">Aceeuil</ActiveLink>
-        <ActiveLink href="/recipes/generate">Services</ActiveLink>
-        <ActiveLink href="/recipes/generate">Carrière</ActiveLink>
+        <ActiveLink href="/">Aceeuil</ActiveLink>
+        <ActiveLink href="/services">Services</ActiveLink>
+        <ActiveLink href="/carriere">Carrière</ActiveLink>
         <button className="main-button gradient">Contactez-Nous</button>
       </Navbar.Content>
 
