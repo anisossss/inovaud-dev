@@ -3,5 +3,5 @@ export const CONSTANTS = {
 };
 
 // export const CONSTANTS = {
-//   API_URL_PROD: "https://api..com/api",
+//   API_URL_PROD: "https://api.inovaud.com/api",
 // };
