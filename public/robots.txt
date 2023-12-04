@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://inovaud.com
+
+# Sitemaps
+Sitemap: https://architect.com/inovaud.xml

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1080.08">
+  <defs>
+    <style>
+      .cls-1 {
+        mix-blend-mode: multiply;
+      }
+
+      .cls-2 {
+        fill: url(#Degradado_sin_nombre_8);
+      }
+
+      .cls-3 {
+        fill: url(#Degradado_sin_nombre_5);
+      }
+
+      .cls-4 {
+        isolation: isolate;
+      }
+    </style>
+    <radialGradient id="Degradado_sin_nombre_8" data-name="Degradado sin nombre 8" cx="386.74" cy="274.05" fx="386.74" fy="274.05" r="389.5" gradientTransform="translate(-30.06 -51.97) scale(2.56 2.16)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#313337"/>
+      <stop offset=".19" stop-color="#2b2d30"/>
+      <stop offset="1" stop-color="#181818"/>
+    </radialGradient>
+    <linearGradient id="Degradado_sin_nombre_5" data-name="Degradado sin nombre 5" x1="1008.63" y1="682.23" x2="777.82" y2="7.41" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".13" stop-color="#fbfbfb"/>
+      <stop offset=".25" stop-color="#efefef"/>
+      <stop offset=".38" stop-color="#dbdbdb"/>
+      <stop offset=".5" stop-color="#bfbfbf"/>
+      <stop offset=".63" stop-color="#9c9c9c"/>
+      <stop offset=".75" stop-color="#707070"/>
+      <stop offset=".88" stop-color="#3c3c3c"/>
+      <stop offset="1" stop-color="#020202"/>
+      <stop offset="1" stop-color="#000"/>
+    </linearGradient>
+  </defs>
+  <g class="cls-4">
+    <g id="Layer_2" data-name="Layer 2">
+      <g id="BACKGROUND">
+        <g>
+          <rect class="cls-2" width="1920" height="1080.08"/>
+          <g class="cls-1">
+            <rect class="cls-3" width="1920" height="1080.08"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

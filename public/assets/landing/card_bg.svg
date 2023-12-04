@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 390.42 390.42">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#Degradado_sin_nombre_2-2);
+      }
+
+      .cls-2 {
+        filter: url(#drop-shadow-1);
+      }
+
+      .cls-3 {
+        fill: url(#Degradado_sin_nombre_2);
+      }
+    </style>
+    <filter id="drop-shadow-1" filterUnits="userSpaceOnUse">
+      <feOffset dx="14" dy="14"/>
+      <feGaussianBlur result="blur" stdDeviation="10"/>
+      <feFlood flood-color="#000" flood-opacity=".5"/>
+      <feComposite in2="blur" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="Degradado_sin_nombre_2" data-name="Degradado sin nombre 2" x1="-1038.09" y1="-2519.62" x2="-1455.44" y2="-2102.27" gradientTransform="translate(1434.17 2513.77)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#303030"/>
+      <stop offset="1" stop-color="#1f1f1f"/>
+    </linearGradient>
+    <linearGradient id="Degradado_sin_nombre_2-2" data-name="Degradado sin nombre 2" x1="-2879.9" y1="-1555.88" x2="-2879.9" y2="-2085.91" gradientTransform="translate(981.62 3481.51) rotate(45)" xlink:href="#Degradado_sin_nombre_2"/>
+  </defs>
+  <g id="OBJECTS">
+    <g class="cls-2">
+      <rect class="cls-3" x="11.17" y="11.17" width="368.08" height="368.08" transform="translate(377.81 -11.85) rotate(86.41)"/>
+      <rect class="cls-1" x="21.17" y="21.17" width="348.08" height="348.08" transform="translate(377.81 -11.85) rotate(86.41)"/>
+    </g>
+  </g>
+</svg>
