@@ -1,3 +1,4 @@
+import { Text } from "@nextui-org/react";
 import Meta from "../../components/seo";
 export default function TermsConditions() {
   return (

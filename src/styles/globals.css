@@ -17,20 +17,20 @@
   outline: 0 !important;
 }
 
-::-webkit-scrollbar {
-  width: 6px;
-}
-
 ::-moz-selection {
   background: #039dd444;
 }
-
 ::selection {
   background: #039dd444;
 }
-
 ::-webkit-scrollbar-thumb {
   background: -webkit-linear-gradient(#7bbb5800, #039dd4, #7bbb5800);
+}
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background-color: black;
 }
 
 html,
