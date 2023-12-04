@@ -1,6 +1,6 @@
 import React from "react";
-import Meta from "../components/seo/index";
-import { IndexLayout } from "../layouts/IndexLayout";
+import Meta from "../../components/seo/index";
+import { IndexLayout } from "../../layouts/IndexLayout";
 import { Hero } from "../../components/landing/hero";
 
 const Services = () => {
