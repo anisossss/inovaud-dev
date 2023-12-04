@@ -6,4 +6,4 @@ Allow: /
 Host: https://inovaud.com
 
 # Sitemaps
-Sitemap: https://architect.com/inovaud.xml
+Sitemap: https://inovaud.com/sitemap.xml

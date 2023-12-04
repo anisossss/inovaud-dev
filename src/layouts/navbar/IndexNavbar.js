@@ -23,16 +23,20 @@ export const Nav = () => {
   }
   const collapseItems = [
     {
-      href: "/discover",
-      title: "Discover",
+      href: "/",
+      title: "Aceeuil",
     },
     {
-      href: "/recipes/generate",
-      title: "Generate",
+      href: "/serives",
+      title: "Services",
     },
     {
-      href: "/communities",
-      title: "Communities",
+      href: "/carriere",
+      title: "Carrière",
+    },
+    {
+      href: "/contact-us",
+      title: "Contactez-Nous",
     },
   ];
 
