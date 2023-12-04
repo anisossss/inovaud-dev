@@ -181,7 +181,7 @@ export default function TermsConditions() {
           that: (a) the link would not make us look unfavorably to ourselves or
           to our accredited businesses; (b) the organization does not have any
           negative records with us; (c) the benefit to us from the visibility of
-          the hyperlink compensates the absence of Kitchen Savvy; and (d) the
+          the hyperlink compensates the absence of INOVAUD Savvy; and (d) the
           link is in the context of general resource information.
         </Text>
         <Text span>
