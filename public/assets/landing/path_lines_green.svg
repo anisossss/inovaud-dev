@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 483.62 823.79">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient-3);
+        stroke: url(#linear-gradient-4);
+        stroke-miterlimit: 10;
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient-8);
+      }
+
+      .cls-4 {
+        fill: url(#linear-gradient-9);
+      }
+
+      .cls-5 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-6 {
+        fill: url(#linear-gradient-6);
+      }
+
+      .cls-7 {
+        fill: url(#linear-gradient-7);
+      }
+
+      .cls-8 {
+        fill: url(#linear-gradient-5);
+      }
+
+      .cls-9 {
+        fill: url(#linear-gradient-10);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="217.53" y1="217.73" x2="483.62" y2="217.73" gradientUnits="userSpaceOnUse">
+      <stop offset=".15" stop-color="#0a990d"/>
+      <stop offset=".35" stop-color="#00c20d"/>
+      <stop offset=".49" stop-color="#05ab0d"/>
+      <stop offset=".62" stop-color="#0a990d"/>
+      <stop offset=".84" stop-color="#00b10c"/>
+      <stop offset="1" stop-color="#02ba0d"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="392.92" y1="393.12" x2="308.06" y2="41.66" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#00c20d"/>
+      <stop offset=".04" stop-color="#00b50c"/>
+      <stop offset=".17" stop-color="#009209"/>
+      <stop offset=".3" stop-color="#007908"/>
+      <stop offset=".41" stop-color="#006a07"/>
+      <stop offset=".51" stop-color="#006507"/>
+      <stop offset=".7" stop-color="#007f08"/>
+      <stop offset="1" stop-color="#00b10c"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="21.24" y1="605.79" x2="287.33" y2="605.79" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-4" x1="20.81" y1="605.79" x2="287.76" y2="605.79" xlink:href="#linear-gradient-2"/>
+    <linearGradient id="linear-gradient-5" x1="37.9" y1="467.05" x2="303.99" y2="467.05" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-6" x1="213.29" y1="642.44" x2="128.43" y2="290.97" xlink:href="#linear-gradient-2"/>
+    <linearGradient id="linear-gradient-7" x1="160.76" y1="390.32" x2="358.31" y2="390.32" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-8" x1="291.06" y1="520.87" x2="228.02" y2="259.76" xlink:href="#linear-gradient-2"/>
+    <linearGradient id="linear-gradient-9" x1="0" y1="649.21" x2="154.82" y2="649.21" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-10" x1="102.13" y1="751.6" x2="52.69" y2="546.83" xlink:href="#linear-gradient-2"/>
+  </defs>
+  <g id="OBJECTS">
+    <g>
+      <g>
+        <line class="cls-1" x1="217.53" y1="435.47" x2="483.62" y2="0"/>
+        <polygon class="cls-5" points="217.53 435.47 250.58 380.91 283.77 326.43 350.15 217.47 416.82 108.69 450.15 54.31 483.62 0 450.57 54.56 417.38 109.04 351 217.99 284.33 326.78 251 381.16 217.53 435.47"/>
+      </g>
+      <line class="cls-2" x1="21.24" y1="823.53" x2="287.33" y2="388.06"/>
+      <g>
+        <line class="cls-8" x1="37.9" y1="684.78" x2="303.99" y2="249.31"/>
+        <polygon class="cls-6" points="37.9 684.78 70.95 630.22 104.14 575.74 170.52 466.79 237.19 358.01 270.52 303.62 303.99 249.31 270.94 303.88 237.75 358.35 171.37 467.31 104.7 576.09 71.37 630.48 37.9 684.78"/>
+      </g>
+      <g>
+        <line class="cls-7" x1="358.31" y1="228.67" x2="160.76" y2="551.96"/>
+        <polygon class="cls-3" points="358.31 228.67 333.83 269.21 309.21 309.67 259.96 390.58 210.44 471.31 185.67 511.68 160.76 551.96 185.25 511.42 209.87 470.96 259.11 390.06 308.64 309.32 333.41 268.96 358.31 228.67"/>
+      </g>
+      <g>
+        <line class="cls-4" x1="154.82" y1="522.53" y2="775.89"/>
+        <polygon class="cls-9" points="154.82 522.53 135.67 554.33 116.4 586.05 77.83 649.47 38.99 712.73 19.56 744.35 0 775.89 19.14 744.1 38.42 712.38 76.98 648.95 115.83 585.7 135.26 554.08 154.82 522.53"/>
+      </g>
+    </g>
+  </g>
+</svg>

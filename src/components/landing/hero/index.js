@@ -19,7 +19,7 @@ export const Hero = () => {
 
         <Grid className="blue_path">
           <Image
-            src={"/assets/landing/path.svg"}
+            src={"/assets/landing/path_lines_green.svg"}
             width={600}
             height={400}
             objectFit="contain"
@@ -28,7 +28,7 @@ export const Hero = () => {
 
         <Grid className="pyramid3">
           <Image
-            src={"/assets/landing/pyramid_3.svg"}
+            src={"/assets/landing/pyramid_green.svg"}
             width={300}
             height={200}
             objectFit="contain"
@@ -45,7 +45,7 @@ export const Hero = () => {
 
         <Grid className="pyramid1">
           <Image
-            src={"/assets/landing/pyramid_2.svg"}
+            src={"/assets/landing/pyramid_green_2.svg"}
             width={300}
             height={200}
             objectFit="contain"
@@ -61,7 +61,7 @@ export const Hero = () => {
 
       <Grid className="pyramid4">
         <Image
-          src={"/assets/landing/pyramid_2.svg"}
+          src={"/assets/landing/pyramid_green_3.svg"}
           width={300}
           height={200}
           objectFit="contain"

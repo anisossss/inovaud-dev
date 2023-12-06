@@ -64,7 +64,7 @@ export const Services = () => {
         </Grid.Container>
         <Grid className="blue_path">
           <Image
-            src={"/assets/landing/path.svg"}
+            src={"/assets/landing/path_lines_green.svg"}
             width={200}
             height={200}
             objectFit="contain"
@@ -72,7 +72,7 @@ export const Services = () => {
         </Grid>{" "}
         <Grid className="blue_path">
           <Image
-            src={"/assets/landing/path.svg"}
+            src={"/assets/landing/path_lines_green.svg"}
             width={600}
             height={400}
             objectFit="contain"
