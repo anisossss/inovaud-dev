@@ -1,6 +1,7 @@
 import React from "react";
 import Meta from "../../components/seo/index";
 import { Hero } from "../../components/landing/hero";
+import { IndexLayout } from "../../layouts/IndexLayout";
 
 const Candidate = () => {
   return (

@@ -22,7 +22,7 @@ export const ServicesCards = () => {
             trigger: card,
             start: "top 80%",
             end: "bottom 60%",
-            toggleActions: "play reverse none reverse",
+            toggleActions: "play none reverse play",
           },
         }
       );
