@@ -30,7 +30,7 @@
   background: #039dd444;
 }
 ::-webkit-scrollbar-thumb {
-  background: -webkit-linear-gradient(#7bbb5800, #0a950d, #7bbb5800);
+  background: -webkit-linear-gradient(#7bbb5800, #3c8a2e, #7bbb5800);
 }
 ::-webkit-scrollbar {
   width: 6px;
@@ -61,19 +61,21 @@ h1 {
 
 h3 {
   font-size: 40px;
-  background: -webkit-linear-gradient(#02a80c, #95ff95);
+  background-clip: text;
+}
+h4 {
+  background: -webkit-linear-gradient(#3c8a2e, #3c8a2e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-
 .navbar {
   background-color: #039dd4;
   background: #333;
 }
 
 .title {
-  background: -webkit-linear-gradient(#02a80c, #95ff95);
+  background: -webkit-linear-gradient(#3c8a2e, #3c8a2e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -95,14 +97,13 @@ span {
   cursor: pointer;
   font-size: 15px;
   text-decoration: none;
-  border-radius: 16px;
-  background-color: #0a950d;
+  background-color: #3c8a2e;
+  transition: all 0.4s ease-in-out;
   font-weight: 400;
 }
 
 .main-button:hover {
-  background-color: #00ad0c;
-  color: #ffffff;
+  background-color: #3c8a2e;
   transition: all 0.4s ease-in-out;
 }
 
@@ -147,10 +148,10 @@ span {
   left: 46em;
   top: 10%;
   height: 150px;
-
   transform: translatey(0px);
   animation: float 6s ease-in-out infinite;
   z-index: 0;
+  rotate: 30deg;
 }
 .pyramid4 {
   width: 170px;
@@ -162,14 +163,15 @@ span {
   animation: float 6s ease-in-out infinite;
   z-index: 0;
 }
-.blue_path {
+.green_path1 {
   width: 900px;
-  height: "9" 00px;
-  position: absolute;
-  left: 0;
-  top: 60;
+  height: 900px;
+  position: fixed;
+  left: 65em;
+  bottom: 5em;
   z-index: 0;
 }
+
 .content {
   position: relative;
   z-index: 99;
@@ -187,7 +189,12 @@ span {
   transition: all 0.8s ease-in-out;
 }
 .card_hover:hover {
-  box-shadow: 0 0 10px #0a950d;
+  box-shadow: 0 0 20px #0a950d;
   transform: all 3s;
   transition: all 0.8s ease-in-out;
+}
+
+.wrapper {
+  margin-top: 10%;
+  min-height: 150vh;
 }

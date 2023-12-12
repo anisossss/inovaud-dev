@@ -1,26 +1,65 @@
 import { Card, Grid, Text, Link, Image } from "@nextui-org/react";
-export const Services = () => {
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import React, { useEffect, useRef } from "react";
+gsap.registerPlugin(ScrollTrigger);
+export const ServicesCards = () => {
+  useEffect(() => {
+    const cards = document.querySelectorAll(".card_hover");
+
+    cards.forEach((card) => {
+      gsap.fromTo(
+        card,
+        {
+          opacity: 0,
+          y: 20,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.1,
+          scrollTrigger: {
+            trigger: card,
+            start: "top 80%",
+            end: "bottom 60%",
+            toggleActions: "play reverse none reverse",
+          },
+        }
+      );
+    });
+  }, []);
   const cards = [
     {
       text: "Développement Web",
+      link: "/developpement-web",
     },
     {
       text: "Développement Mobile",
+      link: "/developpement-mobile",
     },
     {
       text: "Développement Blockchain",
+      link: "/developpement-blockchain",
     },
     {
       text: "Intelligence Artficielle",
+      link: "/intelligence-artificielle",
     },
     {
       text: "Internet Of Things",
+      link: "/iot",
     },
     {
       text: "UX/UI Design",
+      link: "/ux-ui-design",
     },
     {
       text: "Motion Design",
+      link: "/motion-design",
+    },
+    {
+      text: "Digital Marketing",
+      link: "/digital-marketing",
     },
   ];
 
@@ -41,43 +80,30 @@ export const Services = () => {
             marginTop: "5%",
           }}
         >
-          {cards.map(({ text }) => (
+          {cards.map(({ text, link }) => (
             <Grid xs={12} sm={4} md={4} key={text} justify="center">
-              <Card
-                className="card_hover"
-                isHoverable
-                css={{
-                  w: "290px",
-                  h: "200px",
-                }}
-              >
-                <Card.Body
-                  css={{ justifyContent: "center", alignItems: "center" }}
+              <Link href={`/services/${link}`}>
+                <Card
+                  className="card_hover"
+                  isHoverable
+                  css={{
+                    w: "290px",
+                    h: "200px",
+                    borderRadius: 0,
+                  }}
                 >
-                  <Text span css={{ textAlign: "center" }}>
-                    {text}{" "}
-                  </Text>
-                </Card.Body>
-              </Card>
+                  <Card.Body
+                    css={{ justifyContent: "center", alignItems: "center" }}
+                  >
+                    <Text span css={{ textAlign: "center" }}>
+                      {text}{" "}
+                    </Text>
+                  </Card.Body>
+                </Card>
+              </Link>
             </Grid>
           ))}
         </Grid.Container>
-        <Grid className="blue_path">
-          <Image
-            src={"/assets/landing/path_lines_green.svg"}
-            width={200}
-            height={200}
-            objectFit="contain"
-          />
-        </Grid>{" "}
-        <Grid className="blue_path">
-          <Image
-            src={"/assets/landing/path_lines_green.svg"}
-            width={600}
-            height={400}
-            objectFit="contain"
-          />
-        </Grid>
       </Grid>
     </>
   );

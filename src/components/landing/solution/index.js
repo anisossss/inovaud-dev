@@ -10,9 +10,9 @@ export const Solution = () => {
       <Grid.Container className="landing_section">
         <Grid className="">
           <Image
-            src={"/assets/landing/light.svg"}
-            width={240}
-            height={240}
+            src={"/assets/gifs/business.gif"}
+            width={300}
+            height={300}
             objectFit="contain"
           />
         </Grid>

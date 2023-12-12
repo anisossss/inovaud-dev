@@ -1,5 +1,6 @@
 .cursor {
     border-radius: 100%;
+    z-index: 9999;
 }
 
 .cursorFollower {
@@ -9,5 +10,6 @@
     left: -0.5rem;
     top: -0.5rem;
     background-color: #ffffff;   
-     mix-blend-mode: difference;
+    z-index: 9999;
+    mix-blend-mode: difference;
 }

@@ -38,24 +38,22 @@ export const Footer = () => {
             </Link>
             <br></br>
             <a
-              className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+              className="text-blueGray-600 0 font-semibold block pb-2 text-sm"
               href="#"
             >
-              <Link href="/discover">
-                Inovaud, Rue du Port-Franc 22, 1003 Lausanne
-              </Link>
+              Inovaud, Rue du Port-Franc 22, 1003 Lausanne
+            </a>
+            <a
+              href="tel:+21699702374"
+              className="text-blueGray-600  font-semibold block pb-2 text-sm"
+            >
+              + 41 79 192 42 59
             </a>
             <a
               href="#"
-              className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+              className="text-blueGray-600  font-semibold block pb-2 text-sm"
             >
-              <Link href="/meal-planner"> + 41 79 192 42 59</Link>
-            </a>
-            <a
-              href="#"
-              className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-            >
-              <Link href="/meal-planner"> Info@inovaud.ch</Link>
+              Info@inovaud.ch
             </a>
           </Grid>
 
@@ -69,7 +67,7 @@ export const Footer = () => {
                 <ul className="list-unstyled">
                   <li>
                     <a
-                      className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+                      className="text-blueGray-600 hover:text-blueGray-300 font-semibold block pb-2 text-sm"
                       href="#"
                     >
                       <Link href="/discover">Acceuil</Link>
@@ -78,7 +76,7 @@ export const Footer = () => {
                   <li>
                     <a
                       href="#"
-                      className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+                      className="text-blueGray-600 hover:text-blueGray-300 font-semibold block pb-2 text-sm"
                     >
                       <Link href="/meal-planner"> Services</Link>
                     </a>
@@ -86,7 +84,7 @@ export const Footer = () => {
                   <li>
                     <a
                       href="#"
-                      className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+                      className="text-blueGray-600 hover:text-blueGray-300 font-semibold block pb-2 text-sm"
                     >
                       <Link href="/blogs">Notre Blog</Link>
                     </a>
@@ -101,7 +99,7 @@ export const Footer = () => {
                 <ul className="list-unstyled">
                   <li>
                     <a
-                      className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+                      className="text-blueGray-600 hover:text-blueGray-300 font-semibold block pb-2 text-sm"
                       href="#"
                     >
                       <Link href="/discover">Développement Web</Link>
@@ -110,7 +108,7 @@ export const Footer = () => {
                   <li>
                     <a
                       href="#"
-                      className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+                      className="text-blueGray-600 hover:text-blueGray-300 font-semibold block pb-2 text-sm"
                     >
                       <Link href="/meal-planner"> Développement Mobile</Link>
                     </a>
@@ -118,7 +116,7 @@ export const Footer = () => {
                   <li>
                     <a
                       href="#"
-                      className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+                      className="text-blueGray-600 hover:text-blueGray-300 font-semibold block pb-2 text-sm"
                     >
                       <Link href="/blogs">Intelligence Artificielle</Link>
                     </a>
@@ -134,7 +132,7 @@ export const Footer = () => {
               Copyright © {new Date().getFullYear()} INOVAUD Inc.{" "}
               <a
                 href="https://www.linkedin.com/in/anis-khalef-11660a231/"
-                className="text-blueGray-500 hover:text-blueGray-800"
+                className="text-blueGray-500 hover:text-blueGray-300"
                 target="_blank"
                 rel="noreferrer"
               >

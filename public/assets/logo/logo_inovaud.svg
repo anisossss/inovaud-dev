@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 359.28 59.46">
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 359.28 59.46">
   <defs>
     <style>
       .cls-1 {
@@ -7,39 +7,9 @@
       }
 
       .cls-2 {
-        fill: url(#linear-gradient-3);
-        stroke: url(#linear-gradient-4);
-      }
-
-      .cls-2, .cls-3 {
-        stroke-miterlimit: 10;
-      }
-
-      .cls-3 {
-        fill: url(#linear-gradient);
-        stroke: url(#linear-gradient-2);
+        fill: #3c8a2e;
       }
     </style>
-    <linearGradient id="linear-gradient" x1="138.78" y1="29.68" x2="197.16" y2="29.68" gradientUnits="userSpaceOnUse">
-      <stop offset=".15" stop-color="#0a950d"/>
-      <stop offset=".35" stop-color="#00be0d"/>
-      <stop offset=".49" stop-color="#05a70d"/>
-      <stop offset=".62" stop-color="#0a950d"/>
-      <stop offset=".84" stop-color="#00ad0c"/>
-      <stop offset="1" stop-color="#02b60d"/>
-    </linearGradient>
-    <linearGradient id="linear-gradient-2" x1="138.01" y1="29.68" x2="197.93" y2="29.68" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#00be0d"/>
-      <stop offset=".03" stop-color="#00b50c"/>
-      <stop offset=".17" stop-color="#00920a"/>
-      <stop offset=".29" stop-color="#007908"/>
-      <stop offset=".41" stop-color="#006a07"/>
-      <stop offset=".51" stop-color="#006507"/>
-      <stop offset=".71" stop-color="#007f08"/>
-      <stop offset="1" stop-color="#00ad0c"/>
-    </linearGradient>
-    <linearGradient id="linear-gradient-3" x1="182.86" y1="29.64" x2="242.87" y2="29.64" xlink:href="#linear-gradient"/>
-    <linearGradient id="linear-gradient-4" x1="182.08" y1="29.64" x2="243.65" y2="29.64" xlink:href="#linear-gradient-2"/>
   </defs>
   <g id="BACKGROUND">
     <g>
@@ -48,7 +18,7 @@
       <rect id="Rectangle_3" data-name="Rectangle 3" class="cls-1" y=".61" width="8.19" height="58"/>
       <path id="Tracé_9" data-name="Tracé 9" class="cls-1" d="m19.28.61h6.41l33.46,42.67V.61h8.16v58.06h-6.31L27.48,16v42.67h-8.2V.61Z"/>
       <path id="Tracé_10" data-name="Tracé 10" class="cls-1" d="m109,0c-16.38.49-29.27,14.17-28.78,30.56.49,16.38,14.17,29.27,30.56,28.78,16.04-.48,28.79-13.62,28.79-29.66C139.31,13.04,125.63-.24,109,0Zm0,51.44c-12.03-.18-21.63-10.07-21.46-22.1.18-12.03,10.07-21.63,22.1-21.46,11.91.17,21.46,9.88,21.46,21.79,0,12.03-9.76,21.78-21.79,21.77-.13,0-.26,0-.39,0h.08Z"/>
-      <path id="Tracé_11" data-name="Tracé 11" class="cls-3" d="m138.78.62h9l20.22,45.57L188.53.62h8.63l-25.84,58.12h-6.55L138.78.62Z"/>
+      <path id="Tracé_11" data-name="Tracé 11" class="cls-2" d="m138.78.62h9l20.22,45.57L188.53.62h8.63l-25.84,58.12h-6.55L138.78.62Z"/>
       <path id="Tracé_12" data-name="Tracé 12" class="cls-2" d="m191.74,58.68h-8.88L209.54.59h6.61l26.72,58.09h-8.87l-21.15-46.45-21.11,46.45Z"/>
     </g>
   </g>

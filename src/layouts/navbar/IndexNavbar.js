@@ -47,7 +47,7 @@ export const Nav = () => {
         "& .nextui-navbar-container": {
           position: "fixed",
           top: 0,
-          justifyContent: "space-evenly",
+          justifyContent: "space-around",
           padding: 5,
         },
       }}

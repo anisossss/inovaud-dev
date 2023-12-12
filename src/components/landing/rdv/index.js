@@ -10,9 +10,9 @@ export const Rdv = () => {
       <Grid.Container className="landing_section">
         <Grid className="">
           <Image
-            src={"/assets/icons/blockchain.svg"}
-            width={240}
-            height={240}
+            src={"/assets/landing/calendar.png"}
+            width={300}
+            height={300}
             objectFit="contain"
           />
         </Grid>

@@ -1,10 +1,10 @@
 {
-    "name": "INOVAUD",
-    "short_name": "INOVAUD pour les solutions informatiques.",
+    "name": "",
+    "short_name": "",
     "icons": [
         {
-            "src": "/android-chrome-192x192.png",
-            "sizes": "192x192",
+            "src": "/android-chrome-144x144.png",
+            "sizes": "144x144",
             "type": "image/png"
         }
     ],
