@@ -4,7 +4,7 @@ export default function PrivacyPolicy() {
   return (
     <>
       <Meta
-        title="Terms & Conditions - INOVAUD"
+        title="Politique de confidentialité - INOVAUD"
         description="INOVAUD"
         thumbnail="https://i.postimg.cc/MKBWj4pd/thumbnail.png"
       ></Meta>

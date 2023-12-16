@@ -19,6 +19,22 @@ export const Workflow = () => {
       text: "Proposition de solutions optimisées en terme de coûts et délais",
       desc: "Nous élaborons un plan détaillé qui décrit chaque phase du projet, y compris les jalons et les produits livrables.",
     },
+    {
+      text: "Planification et fixation des milestones",
+      desc: "Nous élaborons un plan détaillé qui décrit chaque phase du projet, y compris les jalons et les produits livrables.",
+    },
+    {
+      text: "Implémentation des solutions proposées",
+      desc: "Nous vous assurons une implémentation efficace et un traitement de tous les défis en temps opportun.",
+    },
+    {
+      text: "Test, validation et recueil de feedback",
+      desc: "Nous évaluons votre solution afin de garantir sa haute qualité et ainsi la satisfaction de vos clients.",
+    },
+    {
+      text: "Maintenance, adaptation et amélioration",
+      desc: "Nous améliorons continuellement votre solution en l'adaptant à un contexte en évolution.",
+    },
   ];
   return (
     <>

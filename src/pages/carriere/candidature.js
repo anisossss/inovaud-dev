@@ -1,19 +1,19 @@
 import React from "react";
 import Meta from "../../components/seo/index";
-import { Hero } from "../../components/landing/hero";
 import { IndexLayout } from "../../layouts/IndexLayout";
+import { CandidateForm } from "../../components/career/candidate";
 
 const Candidate = () => {
   return (
     <>
       <Meta
-        title="INOVAUD - Tous nos Services"
+        title="INOVAUD - Postuler votre candidature"
         description="INOVAUD"
         thumbnail="https://i.postimg.cc/MKBWj4pd/thumbnail.png"
         keywords="INOVAUD"
       ></Meta>
       <IndexLayout>
-        <Hero />
+        <CandidateForm />
       </IndexLayout>
     </>
   );

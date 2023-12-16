@@ -8,6 +8,7 @@ import { Solution } from "../components/landing/solution";
 import { ServicesCards } from "../components/landing/services";
 import { Rdv } from "../components/landing/rdv";
 import { Workflow } from "../components/landing/workflow";
+import { Values } from "../components/landing/values";
 
 const Home = () => {
   const [isDesktop, setIsDesktop] = useState(true);
@@ -25,6 +26,7 @@ const Home = () => {
         <ServicesCards />
         <Solution />
         <Workflow />
+        <Values />
         <Rdv />
       </IndexLayout>
     </>

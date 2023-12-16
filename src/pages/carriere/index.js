@@ -1,19 +1,19 @@
 import React from "react";
 import Meta from "../../components/seo/index";
 import { IndexLayout } from "../../layouts/IndexLayout";
-import { Hero } from "../../components/landing/hero";
+import { Career } from "../../components/career";
 
 const Services = () => {
   return (
     <>
       <Meta
-        title="INOVAUD - Tous nos Services"
+        title="INOVAUD - Carrière"
         description="INOVAUD"
         thumbnail="https://i.postimg.cc/MKBWj4pd/thumbnail.png"
         keywords="INOVAUD"
       ></Meta>
       <IndexLayout>
-        <Hero />
+        <Career />
       </IndexLayout>
     </>
   );

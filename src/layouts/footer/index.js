@@ -38,87 +38,88 @@ export const Footer = () => {
             </Link>
             <br></br>
             <a
-              className="text-blueGray-600 0 font-semibold block pb-2 text-sm"
-              href="#"
+              className="text-white font-semibold block pb-2 text-sm"
+              href="https://maps.app.goo.gl/msGRsYuy9Rm5w7Pn6"
+              target="_blank"
             >
               Inovaud, Rue du Port-Franc 22, 1003 Lausanne
             </a>
             <a
-              href="tel:+21699702374"
-              className="text-blueGray-600  font-semibold block pb-2 text-sm"
+              href="tel:+41791924259"
+              className="text-white  font-semibold block pb-2 text-sm"
             >
               + 41 79 192 42 59
             </a>
             <a
-              href="#"
-              className="text-blueGray-600  font-semibold block pb-2 text-sm"
+              href="mailto:info@inovaud.ch"
+              className="text-white  font-semibold block pb-2 text-sm"
             >
-              Info@inovaud.ch
+              info@inovaud.ch
             </a>
           </Grid>
 
           <Grid className="w-full lg:w-8/12 px-12 mt-12">
             <Grid className="flex flex-wrap items-top mb-6">
               <Grid className="w-full lg:w-4/12 px-4 ml-auto">
-                <span className="block uppercase text-blueGray-500 text-sm font-semibold mb-2">
+                <span className="block uppercase text-blueGray-200 text-sm font-semibold mb-2">
                   QUI SOMMES-NOUS?
                 </span>
                 <br></br>
                 <ul className="list-unstyled">
                   <li>
                     <a
-                      className="text-blueGray-600 hover:text-blueGray-300 font-semibold block pb-2 text-sm"
+                      className="text-white hover:text-blueGray-300 font-semibold block pb-2 text-sm"
                       href="#"
                     >
-                      <Link href="/discover">Acceuil</Link>
+                      <Link href="#">Acceuil</Link>
                     </a>
                   </li>
                   <li>
                     <a
                       href="#"
-                      className="text-blueGray-600 hover:text-blueGray-300 font-semibold block pb-2 text-sm"
+                      className="text-white hover:text-blueGray-300 font-semibold block pb-2 text-sm"
                     >
-                      <Link href="/meal-planner"> Services</Link>
+                      <Link href="#"> Services</Link>
                     </a>
                   </li>
                   <li>
                     <a
                       href="#"
-                      className="text-blueGray-600 hover:text-blueGray-300 font-semibold block pb-2 text-sm"
+                      className="text-white hover:text-blueGray-300 font-semibold block pb-2 text-sm"
                     >
-                      <Link href="/blogs">Notre Blog</Link>
+                      <Link href="#">Notre Blog</Link>
                     </a>
                   </li>
                 </ul>
               </Grid>
               <Grid className="w-full lg:w-4/12 px-4 ml-auto">
-                <span className="block uppercase text-blueGray-500 text-sm font-semibold mb-2">
+                <span className="block uppercase text-white text-sm font-semibold mb-2">
                   NOS SERVICES
                 </span>
                 <br></br>
                 <ul className="list-unstyled">
                   <li>
                     <a
-                      className="text-blueGray-600 hover:text-blueGray-300 font-semibold block pb-2 text-sm"
+                      className="text-white hover:text-blueGray-300 font-semibold block pb-2 text-sm"
                       href="#"
                     >
-                      <Link href="/discover">Développement Web</Link>
+                      <Link href="#">Développement Web</Link>
                     </a>
                   </li>
                   <li>
                     <a
                       href="#"
-                      className="text-blueGray-600 hover:text-blueGray-300 font-semibold block pb-2 text-sm"
+                      className="text-white hover:text-blueGray-300 font-semibold block pb-2 text-sm"
                     >
-                      <Link href="/meal-planner"> Développement Mobile</Link>
+                      <Link href="#"> Développement Mobile</Link>
                     </a>
                   </li>
                   <li>
                     <a
                       href="#"
-                      className="text-blueGray-600 hover:text-blueGray-300 font-semibold block pb-2 text-sm"
+                      className="text-white hover:text-blueGray-300 font-semibold block pb-2 text-sm"
                     >
-                      <Link href="/blogs">Intelligence Artificielle</Link>
+                      <Link href="#">Intelligence Artificielle</Link>
                     </a>
                   </li>
                 </ul>

@@ -6,7 +6,7 @@ export default function Error404() {
   return (
     <>
       <Meta
-        title="Page Not Found 404 - INOVAUD"
+        title="Page 404 - INOVAUD"
         description="INOVAUD"
         thumbnail="https://i.postimg.cc/MKBWj4pd/thumbnail.png"
       ></Meta>
@@ -14,8 +14,10 @@ export default function Error404() {
         <Grid css={{ marginBottom: "2em" }}>
           <Grid className="terminal">
             <Text h4 className="output">
-              Please try to <Link href="/">go back</Link> or
-              <Link href="/">return to the homepage</Link>.
+              404...
+              <br></br>
+              <br></br>
+              <Link href="/">Retour à l'acceuil</Link>
             </Text>
           </Grid>
         </Grid>

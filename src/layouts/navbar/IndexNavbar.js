@@ -71,7 +71,9 @@ export const Nav = () => {
         <ActiveLink href="/">Aceeuil</ActiveLink>
         <ActiveLink href="/services">Services</ActiveLink>
         <ActiveLink href="/carriere">Carrière</ActiveLink>
-        <button className="main-button gradient">Contactez-Nous</button>
+        <ActiveLink href="/contact">
+          <button className="main-button">Contactez-Nous</button>
+        </ActiveLink>
       </Navbar.Content>
 
       <Navbar.Collapse css={{ position: "fixed" }}>

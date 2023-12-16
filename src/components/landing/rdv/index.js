@@ -21,7 +21,7 @@ export const Rdv = () => {
             <Fade top>
               <Text h3>Fixer un premier rendez-vous</Text>
             </Fade>
-
+            <br></br>
             <Grid className="content">
               <Text size={"$sm"} span>
                 Vous avez des questions, des attentes, des besoins.
@@ -29,9 +29,8 @@ export const Rdv = () => {
                 solutions.
               </Text>
             </Grid>
-
             <br></br>
-            <Grid className="content">
+            <Grid>
               <Link href="/discover">
                 <button className="main-button">Contactez-nous</button>
               </Link>

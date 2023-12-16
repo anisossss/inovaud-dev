@@ -1,81 +1,66 @@
-import { Card, Grid, Text, Link, Image } from "@nextui-org/react";
-export const Services = () => {
-  const cards = [
-    {
-      text: "Développement Web",
-      link: "/developpement-web",
-    },
-    {
-      text: "Développement Mobile",
-      link: "/developpement-mobile",
-    },
-    {
-      text: "Développement Blockchain",
-      link: "/developpement-blockchain",
-    },
-    {
-      text: "Intelligence Artficielle",
-      link: "/intelligence-artificielle",
-    },
-    {
-      text: "Internet Of Things",
-      link: "/iot",
-    },
-    {
-      text: "UX/UI Design",
-      link: "/ux-ui-design",
-    },
-    {
-      text: "Motion Design",
-      link: "/motion-design",
-    },
-    {
-      text: "Digital Marketing",
-      link: "/digital-marketing",
-    },
-  ];
+import { Grid, Input, Text, Textarea } from "@nextui-org/react";
+import React, { useState } from "react";
+import Image from "next/image";
 
+export const ContactForm = () => {
   return (
     <>
-      <Grid align="center">
-        <Grid>
-          <Text h3 size={"$4xl"}>
-            Nos services
-          </Text>
-        </Grid>
-        <Grid.Container
-          gap={2}
-          css={{
-            width: "80%",
-            justifyContent: "center",
-            margin: "auto",
-            marginTop: "5%",
-          }}
-        >
-          {cards.map(({ text, link }) => (
-            <Grid xs={12} sm={4} md={4} key={text} justify="center">
-              <Link href={`/services/${link}`}>
-                <Card
-                  className="card_hover"
-                  isHoverable
-                  css={{
-                    w: "290px",
-                    h: "200px",
-                    borderRadius: 0,
-                  }}
-                >
-                  <Card.Body
-                    css={{ justifyContent: "center", alignItems: "center" }}
-                  >
-                    <Text span css={{ textAlign: "center" }}>
-                      {text}{" "}
-                    </Text>
-                  </Card.Body>
-                </Card>
-              </Link>
+      <Grid
+        css={{
+          padding: "3%",
+          margin: "auto",
+          marginTop: "8%",
+        }}
+      >
+        <Grid className="candidate_wrapper">
+          <Grid align="center">
+            <Grid>
+              <Text h3>Réserver un rendez-vous</Text>
             </Grid>
-          ))}
-        </Grid.Container>
+            <br></br>
+            <Grid>
+              <Text size={"$md"} span>
+                Vous pouvez contacter l'un de nos experts, nous serons toujours
+                heureux de vous aider. <br></br>Demandez un rendez-vous en
+                remplissant ce formulaire. Nous vous reviendrons dans les plus
+                brefs délais.
+              </Text>
+            </Grid>
+          </Grid>
+          <br></br>
+          <br></br>
+          <Grid className="green_path1">
+            <Image
+              src={"/assets/landing/path_lines_green.svg"}
+              width={600}
+              height={400}
+              objectFit="contain"
+            />
+          </Grid>
+          <Grid className="candidate_form">
+            <Grid css={{ width: "100%" }}>
+              <Input label="Nom" placeholder=" " fullWidth />
+            </Grid>{" "}
+            <Grid>
+              <Input label="Adresse e-mail" placeholder="" fullWidth />
+            </Grid>{" "}
+            <Grid>
+              <Input label="Numéro de téléphone" placeholder="" fullWidth />
+            </Grid>{" "}
+            <Grid>
+              <Input label="Disponibilité" placeholder="" fullWidth />
+            </Grid>{" "}
+            <Grid>
+              <Textarea label="Message" placeholder="" fullWidth />
+            </Grid>
+            <br></br>
+            <Grid>
+              <button style={{ width: "100%" }} className="main-button">
+                Envoyer
+              </button>
+            </Grid>
+          </Grid>
+        </Grid>
       </Grid>
     </>
   );

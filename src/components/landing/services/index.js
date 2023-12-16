@@ -2,32 +2,32 @@ import { Card, Grid, Text, Link, Image } from "@nextui-org/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import React, { useEffect, useRef } from "react";
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 export const ServicesCards = () => {
-  useEffect(() => {
-    const cards = document.querySelectorAll(".card_hover");
+  // useEffect(() => {
+  //   const cards = document.querySelectorAll(".card_hover");
 
-    cards.forEach((card) => {
-      gsap.fromTo(
-        card,
-        {
-          opacity: 0,
-          y: 20,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.1,
-          scrollTrigger: {
-            trigger: card,
-            start: "top 80%",
-            end: "bottom 60%",
-            toggleActions: "play none reverse play",
-          },
-        }
-      );
-    });
-  }, []);
+  //   cards.forEach((card) => {
+  //     gsap.fromTo(
+  //       card,
+  //       {
+  //         opacity: 0,
+  //         y: 20,
+  //       },
+  //       {
+  //         opacity: 1,
+  //         y: 0,
+  //         duration: 0.1,
+  //         scrollTrigger: {
+  //           trigger: card,
+  //           start: "top 80%",
+  //           end: "bottom 60%",
+  //           toggleActions: "play none reverse play",
+  //         },
+  //       }
+  //     );
+  //   });
+  // }, []);
   const cards = [
     {
       text: "Développement Web",
@@ -46,7 +46,7 @@ export const ServicesCards = () => {
       link: "/intelligence-artificielle",
     },
     {
-      text: "Internet Of Things",
+      text: "Internet Des Objets",
       link: "/iot",
     },
     {

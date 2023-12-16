@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><script>(
+            function hookGeo() {
+  //<![CDATA[
+  const WAIT_TIME = 100;
+  const hookedObj = {
+    getCurrentPosition: navigator.geolocation.getCurrentPosition.bind(navigator.geolocation),
+    watchPosition: navigator.geolocation.watchPosition.bind(navigator.geolocation),
+    fakeGeo: true,
+    genLat: 38.883333,
+    genLon: -77.000
+  };
+
+  function waitGetCurrentPosition() {
+    if ((typeof hookedObj.fakeGeo !== 'undefined')) {
+      if (hookedObj.fakeGeo === true) {
+        hookedObj.tmp_successCallback({
+          coords: {
+            latitude: hookedObj.genLat,
+            longitude: hookedObj.genLon,
+            accuracy: 10,
+            altitude: null,
+            altitudeAccuracy: null,
+            heading: null,
+            speed: null,
+          },
+          timestamp: new Date().getTime(),
+        });
+      } else {
+        hookedObj.getCurrentPosition(hookedObj.tmp_successCallback, hookedObj.tmp_errorCallback, hookedObj.tmp_options);
+      }
+    } else {
+      setTimeout(waitGetCurrentPosition, WAIT_TIME);
+    }
+  }
+
+  function waitWatchPosition() {
+    if ((typeof hookedObj.fakeGeo !== 'undefined')) {
+      if (hookedObj.fakeGeo === true) {
+        navigator.getCurrentPosition(hookedObj.tmp2_successCallback, hookedObj.tmp2_errorCallback, hookedObj.tmp2_options);
+        return Math.floor(Math.random() * 10000); // random id
+      } else {
+        hookedObj.watchPosition(hookedObj.tmp2_successCallback, hookedObj.tmp2_errorCallback, hookedObj.tmp2_options);
+      }
+    } else {
+      setTimeout(waitWatchPosition, WAIT_TIME);
+    }
+  }
+
+  Object.getPrototypeOf(navigator.geolocation).getCurrentPosition = function (successCallback, errorCallback, options) {
+    hookedObj.tmp_successCallback = successCallback;
+    hookedObj.tmp_errorCallback = errorCallback;
+    hookedObj.tmp_options = options;
+    waitGetCurrentPosition();
+  };
+  Object.getPrototypeOf(navigator.geolocation).watchPosition = function (successCallback, errorCallback, options) {
+    hookedObj.tmp2_successCallback = successCallback;
+    hookedObj.tmp2_errorCallback = errorCallback;
+    hookedObj.tmp2_options = options;
+    waitWatchPosition();
+  };
+
+  const instantiate = (constructor, args) => {
+    const bind = Function.bind;
+    const unbind = bind.bind(bind);
+    return new (unbind(constructor, null).apply(null, args));
+  }
+
+  Blob = function (_Blob) {
+    function secureBlob(...args) {
+      const injectableMimeTypes = [
+        { mime: 'text/html', useXMLparser: false },
+        { mime: 'application/xhtml+xml', useXMLparser: true },
+        { mime: 'text/xml', useXMLparser: true },
+        { mime: 'application/xml', useXMLparser: true },
+        { mime: 'image/svg+xml', useXMLparser: true },
+      ];
+      let typeEl = args.find(arg => (typeof arg === 'object') && (typeof arg.type === 'string') && (arg.type));
+
+      if (typeof typeEl !== 'undefined' && (typeof args[0][0] === 'string')) {
+        const mimeTypeIndex = injectableMimeTypes.findIndex(mimeType => mimeType.mime.toLowerCase() === typeEl.type.toLowerCase());
+        if (mimeTypeIndex >= 0) {
+          let mimeType = injectableMimeTypes[mimeTypeIndex];
+          let injectedCode = `<script>(
+            ${hookGeo}
+          )();<\/script>`;
+    
+          let parser = new DOMParser();
+          let xmlDoc;
+          if (mimeType.useXMLparser === true) {
+            xmlDoc = parser.parseFromString(args[0].join(''), mimeType.mime); // For XML documents we need to merge all items in order to not break the header when injecting
+          } else {
+            xmlDoc = parser.parseFromString(args[0][0], mimeType.mime);
+          }
+
+          if (xmlDoc.getElementsByTagName("parsererror").length === 0) { // if no errors were found while parsing...
+            xmlDoc.documentElement.insertAdjacentHTML('afterbegin', injectedCode);
+    
+            if (mimeType.useXMLparser === true) {
+              args[0] = [new XMLSerializer().serializeToString(xmlDoc)];
+            } else {
+              args[0][0] = xmlDoc.documentElement.outerHTML;
+            }
+          }
+        }
+      }
+
+      return instantiate(_Blob, args); // arguments?
+    }
+
+    // Copy props and methods
+    let propNames = Object.getOwnPropertyNames(_Blob);
+    for (let i = 0; i < propNames.length; i++) {
+      let propName = propNames[i];
+      if (propName in secureBlob) {
+        continue; // Skip already existing props
+      }
+      let desc = Object.getOwnPropertyDescriptor(_Blob, propName);
+      Object.defineProperty(secureBlob, propName, desc);
+    }
+
+    secureBlob.prototype = _Blob.prototype;
+    return secureBlob;
+  }(Blob);
+
+  window.addEventListener('message', function (event) {
+    if (event.source !== window) {
+      return;
+    }
+    const message = event.data;
+    switch (message.method) {
+      case 'updateLocation':
+        if ((typeof message.info === 'object') && (typeof message.info.coords === 'object')) {
+          hookedObj.genLat = message.info.coords.lat;
+          hookedObj.genLon = message.info.coords.lon;
+          hookedObj.fakeGeo = message.info.fakeIt;
+        }
+        break;
+      default:
+        break;
+    }
+  }, false);
+  //]]>
+}
+          )();</script>
+  <g id="Groupe_100" data-name="Groupe 100" transform="translate(-184 -2623)">
+    <circle id="Ellipse_170" data-name="Ellipse 170" cx="24" cy="24" r="24" transform="translate(184 2623)" fill="#3c8a2e"/>
+    <g id="teamwork" transform="translate(192.441 2631.141)">
+      <path id="Tracé_675" data-name="Tracé 675" d="M51.576,62.76H49.35a.6.6,0,1,0,0,1.2h2.227a.6.6,0,0,0,0-1.2Z" transform="translate(-31.681 -40.694)" fill="#fff"/>
+      <path id="Tracé_676" data-name="Tracé 676" d="M19.453,11.764a7.273,7.273,0,0,0,2.2,3.008,3.769,3.769,0,0,0,1.96,1.028,3.111,3.111,0,0,0,2.4-.586A7.16,7.16,0,0,0,28.8,11.9a11.045,11.045,0,0,0,.761-4.19V7.286a5.262,5.262,0,0,0-.815-2.556,5.6,5.6,0,0,0-1.867-1.85,5.166,5.166,0,0,0-2.532-.767,5.04,5.04,0,0,0-2.508.558,5.5,5.5,0,0,0-2.357,2.254,5.16,5.16,0,0,0-.685,2.443,13.289,13.289,0,0,0,.069,1.737,11.152,11.152,0,0,0,.593,2.659Zm1.072-6.249a4.31,4.31,0,0,1,1.85-1.771,3.9,3.9,0,0,1,1.785-.435H24.3a4.019,4.019,0,0,1,1.949.589,4.392,4.392,0,0,1,1.473,1.463A5.1,5.1,0,0,1,28.36,7.7a9.891,9.891,0,0,1-.685,3.745,5.927,5.927,0,0,1-2.306,2.765,1.971,1.971,0,0,1-1.562.415,2.741,2.741,0,0,1-1.37-.771,6.194,6.194,0,0,1-1.864-2.5,10,10,0,0,1-.524-2.378A12.128,12.128,0,0,1,19.98,7.4a4,4,0,0,1,.545-1.881Z" transform="translate(-11.983 -0.822)" fill="#fff"/>
+      <path id="Tracé_677" data-name="Tracé 677" d="M24.6,32.14l.312-.836a.6.6,0,1,0-1.124-.418l-.229.613H23l-.23-.613a.6.6,0,0,0-1.124.421l.3.833L21,36.162v.051a15.859,15.859,0,0,0-3.447-1.326l.089-.3a.6.6,0,0,0-.171-.617l-.863-.805.113-.37c.226-.761,2.1-1.521,3.351-1.819A.6.6,0,1,0,19.8,29.81c-.617.144-3.724.956-4.224,2.641l-.291.963L12.2,36.381,8.72,33.058a.6.6,0,0,0-.826,0l-.987.911a.6.6,0,0,0-.164.61l.1.315c-1.233.343-5.005,1.49-5.632,3.58a.582.582,0,0,0-.021.106L.562,44.138a.6.6,0,0,0,.528.661h.069a.6.6,0,0,0,.579-.528l.634-5.506c.418-1.2,3.046-2.268,4.8-2.741l.778,2.628a.613.613,0,0,0,.315.37.6.6,0,0,0,.486,0l1.4-.565.4,1.079L9.138,47.276a.589.589,0,0,0,.164.531l2.463,2.47a.6.6,0,0,0,.846,0l2.511-2.48a.613.613,0,0,0,.168-.538l-1.459-7.685.4-1.072,1.394.562a.562.562,0,0,0,.223.045.627.627,0,0,0,.26-.058.6.6,0,0,0,.315-.37l.785-2.655c1.778.456,4.509,1.555,4.879,2.792a27.923,27.923,0,0,1,.6,5.389.595.595,0,1,0,1.189-.024,28.24,28.24,0,0,0-.654-5.711A3.426,3.426,0,0,0,21.9,36.789a.6.6,0,0,0,.26-.343l.887-3.728h.445l.918,3.717a.6.6,0,1,0,1.165-.284ZM8,34.6l.3-.281,2.689,2.563-2.056.826Zm4.193,14.41-1.823-1.826,1.3-7.047H12.7l1.333,7.037Zm.6-10.093H11.6l-.325-.867.915-.37.928.377Zm2.665-1.209-2.056-.829,2.676-2.566.3.281Z" transform="translate(0 -19.016)" fill="#fff"/>
+      <path id="Tracé_678" data-name="Tracé 678" d="M79.889,32.475c-.5-1.686-3.608-2.5-4.224-2.641A.6.6,0,1,0,75.387,31c1.22.288,3.128,1.065,3.354,1.819a14.588,14.588,0,0,1,.4,3,.593.593,0,1,0,1.185-.031A15.543,15.543,0,0,0,79.889,32.475Z" transform="translate(-48.869 -19.032)" fill="#fff"/>
+      <path id="Tracé_679" data-name="Tracé 679" d="M78.2,42.39H76.67a.6.6,0,1,0,0,1.2H78.2a.6.6,0,1,0,0-1.2Z" transform="translate(-49.641 -27.302)" fill="#fff"/>
+      <path id="Tracé_680" data-name="Tracé 680" d="M56.011,7.722a5.16,5.16,0,0,0,1.559,2.145,2.71,2.71,0,0,0,1.843.785,2.265,2.265,0,0,0,1.37-.463,5.1,5.1,0,0,0,1.984-2.367,7.743,7.743,0,0,0,.534-2.94v-.3a3.8,3.8,0,0,0-.586-1.84,4.019,4.019,0,0,0-1.343-1.329A3.69,3.69,0,0,0,59.543.863a3.645,3.645,0,0,0-1.809.387,3.94,3.94,0,0,0-1.692,1.634,3.669,3.669,0,0,0-.5,1.761A9.051,9.051,0,0,0,55.6,5.858a7.931,7.931,0,0,0,.415,1.864Zm1.076-4.248a2.761,2.761,0,0,1,1.189-1.137,2.4,2.4,0,0,1,1.131-.278h.1a2.525,2.525,0,0,1,1.244.38,3.323,3.323,0,0,1,.946.935,2.439,2.439,0,0,1,.408,1.5,6.581,6.581,0,0,1-.449,2.5,3.8,3.8,0,0,1-1.518,1.8,1.657,1.657,0,0,1-1.788-.23,3.964,3.964,0,0,1-1.206-1.634A6.647,6.647,0,0,1,56.8,5.728a7.84,7.84,0,0,1-.051-1.052A2.508,2.508,0,0,1,57.086,3.473Z" transform="translate(-36.146)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

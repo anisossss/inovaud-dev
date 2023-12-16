@@ -56,12 +56,15 @@ a {
 }
 
 h1 {
-  font-size: 35px;
+  font-size: 40px;
 }
 
 h3 {
-  font-size: 40px;
+  font-size: 30px;
   background-clip: text;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 2em;
 }
 h4 {
   background: -webkit-linear-gradient(#3c8a2e, #3c8a2e);
@@ -175,8 +178,7 @@ span {
 .content {
   position: relative;
   z-index: 99;
-  width: 80%;
-  line-height: 2em;
+  line-height: 3em;
 }
 
 .landing_section {
@@ -184,6 +186,7 @@ span {
   padding: 10%;
   justify-content: space-evenly;
   width: 90%;
+  margin-top: 5em;
 }
 .card_hover {
   transition: all 0.8s ease-in-out;
@@ -197,4 +200,47 @@ span {
 .wrapper {
   margin-top: 10%;
   min-height: 150vh;
+}
+
+.section_wrapper {
+  margin: auto;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+@media screen and (max-width: 763px) {
+  h3,
+  span {
+    font-size: smaller;
+  }
+}
+
+.candidate_form {
+  margin: auto;
+  justify-content: space-evenly;
+  line-height: 3em;
+}
+
+.candidate_wrapper {
+  background: #4a4a4a53;
+  justify-content: center;
+  width: 80%;
+  margin: auto;
+  padding: 5%;
+  position: relative;
+  z-index: 9999;
+  margin-bottom: 5em;
+}
+
+.service_section {
+  margin-top: 50em;
+  padding: 10em;
+  width: 90%;
+  margin: auto;
+}
+
+.timeline {
+  margin-top: 10em;
 }

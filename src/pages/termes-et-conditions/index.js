@@ -4,7 +4,7 @@ export default function TermsConditions() {
   return (
     <>
       <Meta
-        title="Terms & Conditions - INOVAUD"
+        title="Termes et Conditions - INOVAUD"
         description="INOVAUD"
         keywords="INOVAUD"
       ></Meta>
