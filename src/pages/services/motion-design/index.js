@@ -2,6 +2,7 @@ import React from "react";
 import Meta from "../../../components/seo/index";
 import ServiceDetail from "../../../components/services/GenericServices";
 import { IndexLayout } from "../../../layouts/IndexLayout";
+import animationData from "../../../../public/assets/lotties/brainstorming.json";
 
 const MotionService = () => {
   return (
@@ -16,7 +17,7 @@ const MotionService = () => {
         <ServiceDetail
           serviceName="Motion Design"
           description="Imaginez-vous l'identité visuelle de votre entreprise au travers d'animations ? Si tel est le cas, notre équipe de Motion Design se mettra avec enthousiasme à votre service pour imaginer et créer des vidéos promotionnelles ou explicatives, animer votre logo ou concevoir des expériences de réalité virtuelle et augmentée. L'ensemble de ces contenus – visuels et sonores – travaillerons à la mémoire de votre nom, à votre recognition."
-          image="/assets/images/services/uxui.png"
+          animationData={animationData} // Pass your animation data here
           stepsData={{
             step1title: "Étude de vos besoins",
             step1desc:

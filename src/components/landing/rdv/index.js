@@ -1,20 +1,24 @@
 import { Grid, Text } from "@nextui-org/react";
 import React, { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 const Fade = require("react-reveal/Fade");
+import Lottie from "react-lottie";
+import animationData from "../../../../public/assets/lotties/brainstorming.json";
 
 export const Rdv = () => {
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
   return (
     <>
       <Grid.Container className="landing_section">
         <Grid className="">
-          <Image
-            src={"/assets/landing/calendar.png"}
-            width={300}
-            height={300}
-            objectFit="contain"
-          />
+          <Lottie options={defaultOptions} height={400} width={400} />
         </Grid>
         <Grid md={6}>
           <Grid>

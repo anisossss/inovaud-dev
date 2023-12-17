@@ -2,6 +2,7 @@ import React from "react";
 import Meta from "../../../components/seo/index";
 import ServiceDetail from "../../../components/services/GenericServices";
 import { IndexLayout } from "../../../layouts/IndexLayout";
+import animationData from "../../../../public/assets/lotties/brainstorming.json";
 
 const BlockchainService = () => {
   return (
@@ -16,7 +17,7 @@ const BlockchainService = () => {
         <ServiceDetail
           serviceName="Digital Marketing"
           description="Nous entendons par marketing digital l'utilisation de canaux digitaux pour promouvoir votre projet, votre vision. Passionnés, nos spécialistes travaillerons à votre visibilité, à votre empreinte, à votre recognition."
-          image="/assets/images/services/digitalmarketing.png"
+          animationData={animationData} // Pass your animation data here
           stepsData={{
             step1title: "Étude de vos besoins",
             step1desc:

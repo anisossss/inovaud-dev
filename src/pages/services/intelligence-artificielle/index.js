@@ -2,6 +2,7 @@ import React from "react";
 import Meta from "../../../components/seo/index";
 import ServiceDetail from "../../../components/services/GenericServices";
 import { IndexLayout } from "../../../layouts/IndexLayout";
+import animationData from "../../../../public/assets/lotties/brainstorming.json";
 
 const AiService = () => {
   return (
@@ -16,7 +17,7 @@ const AiService = () => {
         <ServiceDetail
           serviceName="Intelligence Artificielle"
           description="L'intelligence artificielle (IA) est la simulation de l'intelligence humaine dans des machines programmées pour penser et agir comme des humains. Inovaud fournit à la fois une expertise technique et un soutien réglementaire pour développer des algorithmes de compréhension du langage naturel, de reconnaissance d'images, d'apprentissage par l'expérience et de prise de décision."
-          image="/assets/images/services/ai.png"
+          animationData={animationData} // Pass your animation data here
           stepsData={{
             step1title: "Définition de la problématique",
             step1desc:

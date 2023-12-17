@@ -6,7 +6,21 @@ import "react-vertical-timeline-component/style.min.css";
 import Image from "next/image";
 import { Grid, Text } from "@nextui-org/react";
 import React from "react";
-const ServiceDetail = ({ serviceName, description, image, stepsData }) => {
+import Lottie from "react-lottie";
+const ServiceDetail = ({
+  serviceName,
+  description,
+  animationData,
+  stepsData,
+}) => {
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
   const steps = [
     {
       title: stepsData.step1title,
@@ -80,7 +94,7 @@ const ServiceDetail = ({ serviceName, description, image, stepsData }) => {
             </Grid>
           </Grid>
           <Grid>
-            <Image src={image} alt=" " height={300} width={300} />
+            <Lottie options={defaultOptions} height={200} width={200} />
           </Grid>
         </Grid.Container>
         <Grid className="timeline">

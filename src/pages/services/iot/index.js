@@ -2,6 +2,7 @@ import React from "react";
 import Meta from "../../../components/seo/index";
 import ServiceDetail from "../../../components/services/GenericServices";
 import { IndexLayout } from "../../../layouts/IndexLayout";
+import animationData from "../../../../public/assets/lotties/brainstorming.json";
 
 const IotService = () => {
   return (
@@ -16,7 +17,7 @@ const IotService = () => {
         <ServiceDetail
           serviceName="Internet Des Objets"
           description="L'internet des objets (Internet of Things – IoT) désigne le réseau interconnecté de dispositifs physiques – objets, lieux, environnements – dotés de capteurs, de logiciels et d'une connectivité réseau permettant d'échanger et de collecter toutes données utiles à l'analyse puis à l'optimisation d'une activité. De nombreux agriculteurs connaissent déjà en temps réel l'état de santé de leurs vaches ou le besoin en irrigation de leurs cultures. Avez vous aussi besoin d'indicateurs qui vous permettraient d'anticiper et de prendre des décisions pertinentes ?"
-          image="/assets/images/services/iot.png"
+          animationData={animationData} // Pass your animation data here
           stepsData={{
             step1title: "Étude de vos besoins",
             step1desc:

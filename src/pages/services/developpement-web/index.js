@@ -2,6 +2,7 @@ import React from "react";
 import Meta from "../../../components/seo/index";
 import ServiceDetail from "../../../components/services/GenericServices";
 import { IndexLayout } from "../../../layouts/IndexLayout";
+import animationData from "../../../../public/assets/lotties/brainstorming.json";
 
 const DevWebService = () => {
   return (
@@ -16,7 +17,7 @@ const DevWebService = () => {
         <ServiceDetail
           serviceName="Développement Web"
           description="Qui peut se passer d'un site web de nos jours ? C'est un canal de communication et de distribution qui vous assure visibilité, confiance et recognition. Concevoir votre site sur la base de vos attentes puis le mettre en service est le travail de nos développeurs web qui assureront ensuite sa maintenance et sa responsivité (adaptation à différents appareils et tailles d'écran). Nos experts s'engagent à répondre à vos besoins soit en site web personnalisé soit en développement sur CMS."
-          image="/assets/images/services/devweb.png"
+          animationData={animationData} // Pass your animation data here
           stepsData={{
             step1title: "Étude de vos besoins",
             step1desc:
