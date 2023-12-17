@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 import Lottie from "react-lottie";
 import animationData1 from "../../../../public/assets/lotties/brainstorming.json";
-import animationData2 from "../../../../public/assets/lotties/team.json";
+import animationData2 from "../../../../public/assets/lotties/teamdev.json";
 import animationData3 from "../../../../public/assets/lotties/training.json";
 
 export const Values = () => {

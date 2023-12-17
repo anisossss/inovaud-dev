@@ -3,19 +3,12 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 const Fade = require("react-reveal/Fade");
-
+import Lottie from "react-lottie";
 export const Solution = () => {
   return (
     <>
       <Grid.Container className="landing_section">
-        <Grid className="">
-          <Image
-            src={"/assets/gifs/business.gif"}
-            width={300}
-            height={300}
-            objectFit="contain"
-          />
-        </Grid>
+        <Grid className=""></Grid>
         <Grid md={6}>
           <Grid>
             <Fade top>

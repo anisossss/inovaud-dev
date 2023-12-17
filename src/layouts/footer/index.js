@@ -2,17 +2,6 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Text, Grid } from "@nextui-org/react";
-import {
-  BsFacebook,
-  BsYoutube,
-  BsInstagram,
-  BsLinkedin,
-  BsTwitter,
-  BsMedium,
-  BsPinterest,
-} from "react-icons/bs";
-
-import { FaTiktok } from "react-icons/fa";
 
 export const Footer = () => {
   return (
@@ -41,6 +30,7 @@ export const Footer = () => {
               className="text-white font-semibold block pb-2 text-sm"
               href="https://maps.app.goo.gl/msGRsYuy9Rm5w7Pn6"
               target="_blank"
+              rel="noreferrer"
             >
               Inovaud, Rue du Port-Franc 22, 1003 Lausanne
             </a>
