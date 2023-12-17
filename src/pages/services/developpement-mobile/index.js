@@ -2,7 +2,7 @@ import React from "react";
 import Meta from "../../../components/seo/index";
 import ServiceDetail from "../../../components/services/GenericServices";
 import { IndexLayout } from "../../../layouts/IndexLayout";
-import animationData from "../../../public/assets/lotties/brainstorming.json";
+import animationData from "../../../../public/assets/lotties/brainstorming.json";
 
 const DevMobileService = () => {
   return (
