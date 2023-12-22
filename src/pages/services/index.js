@@ -8,7 +8,7 @@ const Services = () => {
   return (
     <>
       <Meta
-        title="INOVAUD - Tous nos Services"
+        title="INOVAUD - Nos Services"
         description="INOVAUD"
         thumbnail="https://i.postimg.cc/MKBWj4pd/thumbnail.png"
         keywords="INOVAUD"
