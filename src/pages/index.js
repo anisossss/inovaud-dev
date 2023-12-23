@@ -18,7 +18,6 @@ const Home = () => {
   const pyramid1 = useRef(null);
   const pyramid3 = useRef(null);
   const pyramid4 = useRef(null);
-  const path = useRef(null);
 
   useEffect(() => {
     const animatePyramid = (
@@ -47,29 +46,6 @@ const Home = () => {
         ease: ease,
       });
     };
-    const animatePath = (
-      pathRef,
-      start,
-      end,
-      offsetY,
-      offsetX,
-      duration = 3,
-      ease = "power2.inOut"
-    ) => {
-      gsap.to(pathRef.current, {
-        scrollTrigger: {
-          trigger: pathRef.current,
-          start: start,
-          end: end,
-          scrub: duration,
-          toggleActions: "play reverse play reverse",
-        },
-        y: offsetY,
-        x: offsetX,
-        ease: ease,
-      });
-    };
-    animatePath(path, "top center", "bottom bottom", 500, 200);
 
     animatePyramid(pyramid1, "top center", "bottom bottom", -80, 2, 2, 60);
     animatePyramid(pyramid3, "top center", "bottom bottom", 80, 2, 2, 60);
@@ -85,18 +61,8 @@ const Home = () => {
         keywords="INOVAUD"
       ></Meta>
       <IndexLayout>
-        <div ref={path}>
+        <div>
           <Grid className="green_path1">
-            <Image
-              src={"/assets/landing/path_lines_green.svg"}
-              width={600}
-              height={500}
-              objectFit="contain"
-            />
-          </Grid>
-        </div>
-        <div ref={path}>
-          <Grid className="green_path2">
             <Image
               src={"/assets/landing/path_lines_green.svg"}
               width={600}

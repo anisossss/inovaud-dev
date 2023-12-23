@@ -200,12 +200,7 @@ span {
   bottom: 5em;
   z-index: 0;
 }
-.green_path2 {
-  width: 500px;
-  height: 500px;
-  position: fixed;
-  transform: rotate(90deg);
-}
+
 .content {
   position: relative;
   z-index: 99;
