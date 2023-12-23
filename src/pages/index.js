@@ -47,9 +47,9 @@ const Home = () => {
       });
     };
 
-    animatePyramid(pyramid1, "top center", "bottom bottom", -80, 2, 2, 60);
-    animatePyramid(pyramid3, "top center", "bottom bottom", 80, 2, 2, 60);
-    animatePyramid(pyramid4, "top center", "bottom bottom", 80, 2, 2, 60);
+    animatePyramid(pyramid1, "top center", "bottom bottom", -80, 2, 2, -20);
+    animatePyramid(pyramid3, "top center", "bottom bottom", -80, 2, 2, -20);
+    animatePyramid(pyramid4, "top center", "bottom bottom", -80, 2, 2, -20);
   }, []);
 
   return (
@@ -61,16 +61,14 @@ const Home = () => {
         keywords="INOVAUD"
       ></Meta>
       <IndexLayout>
-        <div>
-          <Grid className="green_path1">
-            <Image
-              src={"/assets/landing/path_lines_green.svg"}
-              width={600}
-              height={500}
-              objectFit="contain"
-            />
-          </Grid>
-        </div>
+        <Grid className="green_path1">
+          <Image
+            src={"/assets/landing/path_lines_green.svg"}
+            width={600}
+            height={500}
+            objectFit="contain"
+          />
+        </Grid>
         <div ref={pyramid4}>
           <Grid className="pyramid4">
             <Image
