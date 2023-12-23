@@ -3,12 +3,10 @@ import React, { useState } from "react";
 import Link from "next/link";
 const Fade = require("react-reveal/Fade");
 import Lottie from "react-lottie";
-import animationData from "../../../../public/assets/lotties/brainstorming.json";
+import animationData from "../../../../public/assets/lotties/team_com.json";
 
 export const Rdv = () => {
   const defaultOptions = {
-    loop: true,
-    autoplay: true,
     animationData: animationData,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
@@ -18,12 +16,14 @@ export const Rdv = () => {
     <>
       <Grid.Container className="landing_section">
         <Grid className="">
-          <Lottie options={defaultOptions} height={400} width={400} />
+          <Lottie options={defaultOptions} height={300} width={300} />
         </Grid>
         <Grid md={6}>
           <Grid>
             <Fade top>
-              <Text h3>Fixer un premier rendez-vous</Text>
+              <Text h3 css={{ textTransform: "uppercase" }}>
+                Fixer un premier rendez-vous
+              </Text>
             </Fade>
             <br></br>
             <Grid className="content">

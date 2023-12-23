@@ -36,7 +36,9 @@ export default function PrivacyPolicy() {
         <br></br>
         <br></br>
 
-        <Text h3>Consent</Text>
+        <Text h3 css={{ textTransform: "uppercase" }}>
+          Consent
+        </Text>
 
         <Text span>
           By using our website, you hereby consent to our Privacy Policy and

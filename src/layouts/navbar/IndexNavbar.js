@@ -1,4 +1,4 @@
-import { Grid, Link, Navbar } from "@nextui-org/react";
+import { Grid, Link, Navbar, Text } from "@nextui-org/react";
 import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -10,7 +10,7 @@ export const Nav = () => {
 
   function ActiveLink({ href, children }) {
     const router = useRouter();
-    const isActive = router.pathname.startsWith(href);
+    const isActive = router.pathname === href; // Compare exact routes
 
     return (
       <Navbar.Link
@@ -24,7 +24,7 @@ export const Nav = () => {
   const collapseItems = [
     {
       href: "/",
-      title: "Aceeuil",
+      title: "Acceuil",
     },
     {
       href: "/serives",
@@ -35,8 +35,8 @@ export const Nav = () => {
       title: "Carrière",
     },
     {
-      href: "/contact-us",
-      title: "Contactez-Nous",
+      href: "/contact",
+      title: "Contact",
     },
   ];
 
@@ -50,6 +50,33 @@ export const Nav = () => {
           justifyContent: "space-around",
           padding: 5,
         },
+        "& .nav-link": {
+          position: "relative",
+          textDecoration: "none",
+        },
+
+        "& .nav-link::after": {
+          content: "''",
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          width: "100%",
+          height: "0.2em",
+          backgroundColor: "#3c8a2e",
+          opacity: 0,
+          transition: "opacity 300ms, transform 300ms",
+        },
+
+        "& .nav-link.active-link::after": {
+          // Adjusted style for active link
+          opacity: 1,
+          transform: "translateY(2px)", // Adjust the distance of the line from the text
+        },
+
+        "& .nav-link:hover::after, & .nav-link:focus::after": {
+          opacity: 1,
+          transform: "translateY(2px)", // Adjust the distance of the line from the text
+        },
       }}
     >
       <Navbar.Brand>
@@ -59,8 +86,8 @@ export const Nav = () => {
         />
         <Link href="/">
           <Image
-            width={150}
-            height={100}
+            width={180}
+            height={150}
             src="/assets/logo/logo_inovaud.svg"
             alt="logo"
             objectFit="contain"
@@ -68,11 +95,18 @@ export const Nav = () => {
         </Link>
       </Navbar.Brand>
       <Navbar.Content hideIn={isXlScreen && isBeyondXl ? "xl" : "md"}>
-        <ActiveLink href="/">Aceeuil</ActiveLink>
-        <ActiveLink href="/services">Services</ActiveLink>
-        <ActiveLink href="/carriere">Carrière</ActiveLink>
+        <ActiveLink href="/">
+          <Text span>Acceuil</Text>
+        </ActiveLink>
+        <ActiveLink href="/services">
+          <Text span>Services</Text>
+        </ActiveLink>
+        <ActiveLink href="/carriere">
+          {" "}
+          <Text span>Carrière</Text>
+        </ActiveLink>
         <ActiveLink href="/contact">
-          <button className="main-button">Contactez-Nous</button>
+          <button className="main-button">Contact</button>
         </ActiveLink>
       </Navbar.Content>
 

@@ -5,8 +5,6 @@ import animationData from "../../../../public/assets/lotties/brainstorming.json"
 import Fade from "react-reveal/Fade";
 export const Values = () => {
   const defaultOptions = {
-    loop: true,
-    autoplay: true,
     animationData: animationData,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
@@ -30,17 +28,19 @@ export const Values = () => {
 
   return (
     <Grid align="center" css={{ marginTop: "10%" }}>
-      <Text h3>NOS VALEURS FONDAMENTALES</Text>
+      <Text h3 css={{ textTransform: "uppercase" }}>
+        NOS VALEURS FONDAMENTALES
+      </Text>
       <br></br>
       <br></br>
       <Grid.Container justify="center" gap={4}>
         <Grid>
-          <Lottie options={defaultOptions} height={200} width={200} />
+          <Lottie options={defaultOptions} height={300} width={300} />
         </Grid>
         <Grid align="left" md={6}>
           {values.map(({ text, desc }, index) => (
             <Fade top delay={index * 200} key={text}>
-              <Grid css={{ cursor: "pointer" }}>
+              <Grid css={{ cursor: "pointer" }} data-cursor="link">
                 <Text b size="$xl">
                   {text}
                 </Text>

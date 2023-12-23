@@ -16,7 +16,9 @@ export const CandidateForm = () => {
         <Grid className="candidate_wrapper">
           <Grid align="center">
             <Grid>
-              <Text h3>REJOIGNEZ NOTRE ÉQUIPE</Text>
+              <Text h3 css={{ textTransform: "uppercase" }}>
+                REJOIGNEZ NOTRE ÉQUIPE
+              </Text>
             </Grid>
             <br></br>
             <Grid>
@@ -55,10 +57,8 @@ export const CandidateForm = () => {
               <Textarea label="Message" placeholder="" fullWidth />
             </Grid>
             <br></br>
-            <Grid>
-              <button style={{ width: "100%" }} className="main-button">
-                Envoyer
-              </button>
+            <Grid className="row block">
+              <button className="btn cyber">Envoyer</button>
             </Grid>
           </Grid>
         </Grid>

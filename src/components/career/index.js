@@ -3,8 +3,16 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 const Fade = require("react-reveal/Fade");
+import animationData from "../../../public/assets/lotties/colab.json";
+import Lottie from "react-lottie";
 
 export const Career = () => {
+  const defaultOptions = {
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
   const cards = [
     {
       text: "Développeur web fullstack",
@@ -30,7 +38,9 @@ export const Career = () => {
         align="center"
       >
         <Grid>
-          <Text h3>Carrière</Text>
+          <Text h3 css={{ textTransform: "uppercase" }}>
+            Carrière
+          </Text>
         </Grid>
         <br></br>
         <Grid className="green_path1">
@@ -73,7 +83,9 @@ export const Career = () => {
 
         <Grid align="center" className="section_wrapper">
           <Grid>
-            <Text h3>Nos Offres</Text>
+            <Text h3 css={{ textTransform: "uppercase" }}>
+              Nos Offres
+            </Text>
           </Grid>
           <Grid.Container
             gap={2}
@@ -111,16 +123,13 @@ export const Career = () => {
         </Grid>
         <Grid.Container className="section_wrapper">
           <Grid>
-            <Image
-              src={"/assets/landing/newsletter.png"}
-              width={300}
-              height={200}
-              objectFit="contain"
-            />
+            <Lottie options={defaultOptions} height={200} width={200} />
           </Grid>
           <Grid className="content" md={6} css={{ textAlign: "left" }}>
             <Grid>
-              <Text h3>Candidature Spontanée</Text>
+              <Text h3 css={{ textTransform: "uppercase" }}>
+                Candidature Spontanée
+              </Text>
               <br></br>
               <Text span>
                 Candidature spontanée ou à un poste ouvert, n'hésitez pas à nous

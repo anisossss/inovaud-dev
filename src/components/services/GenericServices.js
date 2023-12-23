@@ -14,8 +14,6 @@ const ServiceDetail = ({
   stepsData,
 }) => {
   const defaultOptions = {
-    loop: true,
-    autoplay: true,
     animationData: animationData,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
@@ -84,7 +82,7 @@ const ServiceDetail = ({
     <>
       <Grid className="service_section">
         <Grid.Container alignItems="center">
-          <Grid md={8}>
+          <Grid md={7}>
             <Grid>
               <Text h2>{serviceName}</Text>
               <br></br>
@@ -94,7 +92,7 @@ const ServiceDetail = ({
             </Grid>
           </Grid>
           <Grid>
-            <Lottie options={defaultOptions} height={200} width={200} />
+            <Lottie options={defaultOptions} height={300} width={300} />
           </Grid>
         </Grid.Container>
         <Grid className="timeline">

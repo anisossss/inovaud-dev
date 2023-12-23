@@ -32,8 +32,17 @@ export const Footer = () => {
               target="_blank"
               rel="noreferrer"
             >
-              Inovaud, Rue du Port-Franc 22, 1003 Lausanne
+              <div className="flex items-center">
+                <img
+                  src="/assets/icons/swissflag.avif"
+                  alt="location"
+                  width={20}
+                  height={20}
+                />
+                &nbsp; Inovaud, Rue du Port-Franc 22, 1003 Lausanne
+              </div>
             </a>
+
             <a
               href="tel:+41791924259"
               className="text-white  font-semibold block pb-2 text-sm"
@@ -121,14 +130,6 @@ export const Footer = () => {
           <Grid className="w-full md:w-4/12 px-4 mx-auto text-center">
             <Grid className="text-sm text-blueGray-500 font-semibold py-12">
               Copyright © {new Date().getFullYear()} INOVAUD Inc.{" "}
-              <a
-                href="https://www.linkedin.com/in/anis-khalef-11660a231/"
-                className="text-blueGray-500 hover:text-blueGray-300"
-                target="_blank"
-                rel="noreferrer"
-              >
-                by Anis
-              </a>
             </Grid>
           </Grid>
         </Grid>

@@ -5,10 +5,15 @@ import React from "react";
 import App from "next/app";
 import { GoogleAnalytics } from "nextjs-google-analytics";
 import ".././styles/tailwind.css";
+import Cursor from "../components/cursor/Cursor";
+import { useState } from "react";
 
 export default class MyApp extends App {
   constructor(props) {
     super(props);
+    this.state = {
+      isDesktop: true,
+    };
   }
   componentDidMount() {
     let comment = document.createComment(`
@@ -26,6 +31,7 @@ export default class MyApp extends App {
   }
   render() {
     const { Component, pageProps } = this.props;
+    const { isDesktop } = this.state;
     const myDarkTheme = createTheme({
       type: "dark",
       theme: {
@@ -45,6 +51,7 @@ export default class MyApp extends App {
         <GoogleAnalytics />
         <SSRProvider>
           <Layout>
+            <Cursor isDesktop={isDesktop} />
             <Component {...pageProps} />
           </Layout>
         </SSRProvider>

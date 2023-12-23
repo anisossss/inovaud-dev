@@ -40,38 +40,43 @@ export const Workflow = () => {
     <>
       <Grid align="center">
         <Grid>
-          <Text h3>Notre Workflow</Text>
+          <Text h3 css={{ textTransform: "uppercase" }}>
+            Notre Workflow
+          </Text>
         </Grid>
         <Grid.Container
-          gap={3}
+          gap={2}
           css={{
             width: "80%",
             justifyContent: "center",
             margin: "auto",
             marginTop: "5%",
+            perspective: "1000px",
           }}
         >
           {cards.map(({ text, desc }) => (
-            <Grid xs={12} sm={12} md={3} key={text} justify="center">
-              <Card
-                className="card_hover"
-                isHoverable
-                css={{
-                  padding: 3,
-                  borderRadius: 0,
-                }}
-              >
-                <Card.Body>
-                  <Grid css={{ height: "6em" }}>
-                    <Text b>{text}</Text>
-                  </Grid>
-                  <Grid>
-                    <Text span size={"$sm"}>
+            <Grid xs={12} sm={4} md={4} key={text} justify="center">
+              <div className="flip-card">
+                <div className="flip-card-inner">
+                  <Card
+                    className="flip-card-front card_hover"
+                    isHoverable
+                    css={{ p: "2em", borderRadius: 0 }}
+                  >
+                    <Text span css={{ textAlign: "center" }}>
+                      {text}
+                    </Text>
+                  </Card>
+                  <Card
+                    className="flip-card-back"
+                    css={{ p: "2em", borderRadius: 0 }}
+                  >
+                    <Text span size={"$sm"} css={{ textAlign: "center" }}>
                       {desc}
                     </Text>
-                  </Grid>
-                </Card.Body>
-              </Card>
+                  </Card>
+                </div>
+              </div>
             </Grid>
           ))}
         </Grid.Container>
