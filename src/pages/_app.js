@@ -6,7 +6,6 @@ import App from "next/app";
 import { GoogleAnalytics } from "nextjs-google-analytics";
 import ".././styles/tailwind.css";
 import Cursor from "../components/cursor/Cursor";
-import { useState } from "react";
 
 export default class MyApp extends App {
   constructor(props) {

@@ -35,7 +35,7 @@ export const Rdv = () => {
             </Grid>
             <br></br>
             <Grid>
-              <Link href="/discover">
+              <Link href="/">
                 <button className="main-button">Contactez-nous</button>
               </Link>
             </Grid>

@@ -36,7 +36,7 @@ export const Solution = () => {
 
             <br></br>
             <Grid className="content">
-              <Link href="/discover">
+              <Link href="/">
                 <button className="main-button">Voir Plus</button>
               </Link>
             </Grid>
