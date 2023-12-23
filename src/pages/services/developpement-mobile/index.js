@@ -17,7 +17,7 @@ const DevMobileService = () => {
         <ServiceDetail
           serviceName="Développement Mobile"
           description="Une application mobile est un canal de communication et de distribution devenu indispensable. Notre équipe Développement Mobile est à votre service pour concevoir et lancer une nouvelle application – IOS ou Android – ou pour optimiser toute solution existante. La réalité augmentée et la réalité virtuelle peuvent faire partie de la solution afin d'offrir une expérience utilisateur personnalisée et stimulante."
-          animationData={animationData} // Pass your animation data here
+          animationData={animationData}
           stepsData={{
             step1title: "Étude de vos besoins",
             step1desc:

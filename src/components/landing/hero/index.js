@@ -7,6 +7,23 @@ import Image from "next/image";
 export const Hero = () => {
   return (
     <>
+      <Grid
+        css={{
+          position: "absolute",
+          margin: "auto",
+          justifyContent: "center",
+          alignItems: "center",
+          width: "100%",
+          height: "100%",
+        }}
+      >
+        <Image
+          src={"/assets/images/squaresbg.svg"}
+          width={800}
+          height={800}
+          objectFit="contain"
+        />
+      </Grid>{" "}
       <Grid className="green_path1">
         <Image
           src={"/assets/landing/path_lines_green.svg"}
@@ -15,7 +32,7 @@ export const Hero = () => {
           objectFit="contain"
         />
       </Grid>{" "}
-      <Grid css={{ padding: "10%", margin: "auto" }} align="center" md={12}>
+      <Grid css={{ padding: "10%", margin: "auto" }} align="center">
         <Fade top>
           <Grid>
             <Text h3 css={{ textTransform: "uppercase" }} className="gradtitle">
@@ -24,7 +41,6 @@ export const Hero = () => {
           </Grid>
         </Fade>
         <br></br>
-
         <Fade bottom>
           <Grid className="content">
             <Text size={"$md"} span>
@@ -36,7 +52,6 @@ export const Hero = () => {
           </Grid>
         </Fade>
         <br></br>
-
         <Grid className="content">
           <Link href="/discover">
             <Grid className="row block">
