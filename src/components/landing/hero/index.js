@@ -7,23 +7,26 @@ import Image from "next/image";
 export const Hero = () => {
   return (
     <>
-      <Grid
-        css={{
-          position: "absolute",
-          margin: "auto",
-          justifyContent: "center",
-          alignItems: "center",
-          width: "100%",
-          height: "100%",
-        }}
-      >
-        <Image
-          src={"/assets/images/squaresbg.svg"}
-          width={800}
-          height={800}
-          objectFit="contain"
-        />
-      </Grid>{" "}
+      <Fade>
+        <Grid
+          css={{
+            position: "absolute",
+            margin: "auto",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "100%",
+            height: "100%",
+            left: "22%",
+          }}
+        >
+          <Image
+            src={"/assets/images/squaresbg.svg"}
+            width={850}
+            height={850}
+            objectFit="contain"
+          />
+        </Grid>
+      </Fade>
       <Grid className="green_path1">
         <Image
           src={"/assets/landing/path_lines_green.svg"}
