@@ -15,7 +15,7 @@ const BlockchainService = () => {
         <ServiceDetail
           serviceName="Développement Blockchain"
           description="La blockchain est un registre de base de données décentralisé, immuable et transparent. Nos experts en blockchain s'engagent à vous fournir une DApp (application décentralisée) au service de votre vision. Ils vous aideront à identifier les possibilités d'utilisation de cette technologie avancée pour optimiser vos transactions, réduire vos coûts et créer de nouveaux modèles d'affaires."
-          image="/assets/images/services/blockchain.svg"
+          image="/assets/images/services/blockchain1.svg"
           stepsData={{
             step1title: "1. Étude de vos besoins",
             step1desc:
