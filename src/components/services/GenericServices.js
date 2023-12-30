@@ -80,7 +80,7 @@ const ServiceDetail = ({ serviceName, description, image, stepsData }) => {
             </Grid>
           </Grid>
           <Grid>
-            <Image src={image} height={300} width={300} />
+            <Image src={image} height={350} width={350} />
           </Grid>
         </Grid.Container>
         <Grid className="timeline">
