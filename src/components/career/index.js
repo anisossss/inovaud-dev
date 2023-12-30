@@ -122,13 +122,13 @@ export const Career = () => {
               objectFit="contain"
             />
           </Grid>
-          <Grid className="content" md={6} css={{ textAlign: "left" }}>
+          <Grid md={6} css={{ textAlign: "left" }}>
             <Grid css={{ width: "80%" }}>
               <Text h3 css={{ textTransform: "uppercase" }}>
                 Candidature Spontanée
               </Text>
               <br></br>
-              <Text span>
+              <Text span css={{ lineHeight: "3em" }}>
                 Candidature spontanée ou à un poste ouvert, n'hésitez pas à nous
                 faire part de vos motivations en vue d'une future collaboration.
               </Text>
