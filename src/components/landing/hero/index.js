@@ -54,7 +54,7 @@ export const Hero = () => {
         </Fade>
         <br></br>
         <Grid>
-          <Link href="/">
+          <Link href="/services">
             <Grid className="row block">
               <button className="btn cyber">Voir Plus</button>
             </Grid>
