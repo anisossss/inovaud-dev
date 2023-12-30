@@ -70,7 +70,7 @@ const ServiceDetail = ({ serviceName, description, image, stepsData }) => {
     <>
       <Grid className="service_section">
         <Grid.Container alignItems="center" gap={2}>
-          <Grid md={8}>
+          <Grid md={7}>
             <Grid>
               <Text h3>{serviceName}</Text>
               <br></br>
