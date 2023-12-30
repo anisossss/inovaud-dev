@@ -8,7 +8,7 @@ export default function Error404() {
       <Meta
         title="Page 404 - INOVAUD"
         description="INOVAUD"
-        thumbnail="https://i.postimg.cc/MKBWj4pd/thumbnail.png"
+        thumbnail=""
       ></Meta>
       <Grid.Container css={{ padding: "5%", width: "100%", margin: "auto" }}>
         <Grid css={{ marginBottom: "2em" }}>

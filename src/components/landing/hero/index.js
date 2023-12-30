@@ -31,7 +31,12 @@ export const Hero = () => {
       <Grid css={{ padding: "10%", margin: "auto" }} align="center">
         <Fade top>
           <Grid>
-            <Text h3 css={{ textTransform: "uppercase" }} className="gradtitle">
+            <Text
+              h3
+              css={{ textTransform: "uppercase" }}
+              size={"$3xl"}
+              className="gradtitle"
+            >
               Votre vision, nos solutions
             </Text>
           </Grid>
@@ -39,7 +44,7 @@ export const Hero = () => {
         <br></br>
         <Fade bottom>
           <Grid className="content">
-            <Text size={"$md"} span>
+            <Text span>
               Vous avez un projet, une vision.. <br></br>
               Son déploiement requiert un outil, une solution. Sur mesure et
               innovante. <br></br>
@@ -48,7 +53,7 @@ export const Hero = () => {
           </Grid>
         </Fade>
         <br></br>
-        <Grid className="content">
+        <Grid>
           <Link href="/">
             <Grid className="row block">
               <button className="btn cyber">Voir Plus</button>

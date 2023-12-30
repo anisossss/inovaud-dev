@@ -1,16 +1,8 @@
 import { Grid, Text } from "@nextui-org/react";
 import React from "react";
-import Lottie from "react-lottie";
-import animationData from "../../../../public/assets/lotties/brainstorming.json";
+import Image from "next/image";
 import Fade from "react-reveal/Fade";
 export const Values = () => {
-  const defaultOptions = {
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
-
   const values = [
     {
       text: "Innovation",
@@ -33,22 +25,33 @@ export const Values = () => {
       </Text>
       <br></br>
       <br></br>
-      <Grid.Container justify="center" gap={4}>
-        <Grid>
-          <Lottie options={defaultOptions} height={300} width={300} />
+      <Grid.Container justify="center" gap={1} css={{ width: "80%" }}>
+        <Grid md={4}>
+          <Fade left>
+            <Image
+              src={"/assets/images/services/value1.svg"}
+              height={300}
+              width={400}
+            />
+          </Fade>
         </Grid>
-        <Grid align="left" md={6}>
+        <Grid align="left">
           {values.map(({ text, desc }, index) => (
             <Fade top delay={index * 200} key={text}>
-              <Grid css={{ cursor: "pointer" }} data-cursor="link">
-                <Text b size="$xl">
-                  {text}
-                </Text>
-                <br></br>
-                <br></br>
-                <Text span size="$md">
-                  {desc}
-                </Text>
+              <Grid css={{ cursor: "pointer" }} data-cursor="link" md={10}>
+                <Grid>
+                  <Text
+                    span
+                    size="$2xl"
+                    css={{ fontWeight: "bold", marginBottom: "1em" }}
+                  >
+                    {text}
+                  </Text>
+                </Grid>
+
+                <Grid>
+                  <Text span>{desc}</Text>
+                </Grid>
               </Grid>
             </Fade>
           ))}

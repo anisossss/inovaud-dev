@@ -52,14 +52,6 @@ export const Career = () => {
           />
         </Grid>
 
-        <Grid className="pyramid3">
-          <Image
-            src={"/assets/landing/pyramid_green_2.svg"}
-            width={300}
-            height={200}
-            objectFit="contain"
-          />
-        </Grid>
         <Grid className="content">
           <Text span>
             L’équipe Inovaud est toujours impatiente d’accueillir des membres
@@ -123,10 +115,15 @@ export const Career = () => {
         </Grid>
         <Grid.Container className="section_wrapper">
           <Grid>
-            <Lottie options={defaultOptions} height={200} width={200} />
+            <Image
+              src={"/assets/images/services/contact.svg"}
+              height={400}
+              width={400}
+              objectFit="contain"
+            />
           </Grid>
           <Grid className="content" md={6} css={{ textAlign: "left" }}>
-            <Grid>
+            <Grid css={{ width: "80%" }}>
               <Text h3 css={{ textTransform: "uppercase" }}>
                 Candidature Spontanée
               </Text>
@@ -139,7 +136,9 @@ export const Career = () => {
               <br></br>
               <Grid>
                 <Link href="/carriere/candidature">
-                  <button className="main-button">Postuler</button>
+                  <Grid className="row block">
+                    <button className="btn cyber">Postuler</button>
+                  </Grid>
                 </Link>
               </Grid>
             </Grid>

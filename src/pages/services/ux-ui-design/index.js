@@ -2,7 +2,6 @@ import React from "react";
 import Meta from "../../../components/seo/index";
 import ServiceDetail from "../../../components/services/GenericServices";
 import { IndexLayout } from "../../../layouts/IndexLayout";
-import animationData from "../../../../public/assets/lotties/design.json";
 
 const UxUiDesign = () => {
   return (
@@ -10,14 +9,14 @@ const UxUiDesign = () => {
       <Meta
         title="INOVAUD - UX/UI Design"
         description="INOVAUD"
-        thumbnail="https://i.postimg.cc/MKBWj4pd/thumbnail.png"
+        thumbnail=""
         keywords="INOVAUD"
       ></Meta>
       <IndexLayout>
         <ServiceDetail
           serviceName="UX/UI Design"
           description="Nos UX/UI designers œuvrent à l'amélioration continuelle de l'expérience utilisateur, de ce que l'usager de votre site ou de votre application perçoit et ressent. En concevant des interfaces sensoriellement attrayantes, faciles à utiliser et au contenu pertinent, nous vous garantissons des solutions efficaces qui répondent à l'ensemble de vos attentes."
-          animationData={animationData} // Pass your animation data here
+          image="/assets/images/services/uxui.svg"
           stepsData={{
             step1title: "Étude de vos besoins",
             step1desc:

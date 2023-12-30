@@ -2,21 +2,20 @@ import { Grid, Text } from "@nextui-org/react";
 import React, { useState } from "react";
 import Link from "next/link";
 const Fade = require("react-reveal/Fade");
-import Lottie from "react-lottie";
-import animationData from "../../../../public/assets/lotties/team_com.json";
-
+import Image from "next/image";
 export const Rdv = () => {
-  const defaultOptions = {
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
   return (
     <>
       <Grid.Container className="landing_section">
-        <Grid className="">
-          <Lottie options={defaultOptions} height={300} width={300} />
+        <Grid>
+          <Fade>
+            <Image
+              src={"/assets/images/services/contact.svg"}
+              height={400}
+              width={400}
+              objectFit="contain"
+            />
+          </Fade>
         </Grid>
         <Grid md={6}>
           <Grid>
@@ -27,16 +26,20 @@ export const Rdv = () => {
             </Fade>
             <br></br>
             <Grid className="content">
-              <Text size={"$sm"} span>
-                Vous avez des questions, des attentes, des besoins.
-                <br></br>Une première rencontre vous orientera vers des
-                solutions.
-              </Text>
+              <Fade top>
+                <Text span>
+                  Vous avez des questions, des attentes, des besoins.
+                  <br></br>Une première rencontre vous orientera vers des
+                  solutions.
+                </Text>
+              </Fade>
             </Grid>
             <br></br>
             <Grid>
               <Link href="/">
-                <button className="main-button">Contactez-nous</button>
+                <Grid className="row block">
+                  <button className="btn cyber">Contactez-nous</button>
+                </Grid>
               </Link>
             </Grid>
           </Grid>

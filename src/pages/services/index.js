@@ -10,11 +10,26 @@ const Services = () => {
       <Meta
         title="INOVAUD - Nos Services"
         description="INOVAUD"
-        thumbnail="https://i.postimg.cc/MKBWj4pd/thumbnail.png"
         keywords="INOVAUD"
       ></Meta>
       <IndexLayout>
         <Grid className="wrapper">
+          <Grid align="center">
+            <Grid>
+              <Text h3 size={"$4xl"}>
+                NOS SERVICES
+              </Text>
+            </Grid>
+            <br></br>
+            <Grid md={8}>
+              <Text span>
+                Nous mettons à votre disposition les fruits de notre expertise
+                et savoir-faire.
+                <br></br> Inovaud vous offre un ensemble de services basés sur
+                les technologies de pointe.
+              </Text>
+            </Grid>
+          </Grid>
           <ServicesCards />
         </Grid>
       </IndexLayout>

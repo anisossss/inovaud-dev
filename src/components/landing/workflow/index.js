@@ -55,7 +55,7 @@ export const Workflow = () => {
           }}
         >
           {cards.map(({ text, desc }) => (
-            <Grid xs={12} sm={4} md={4} key={text} justify="center">
+            <Grid xs={12} sm={3} md={3} key={text} justify="center">
               <div className="flip-card">
                 <div className="flip-card-inner">
                   <Card

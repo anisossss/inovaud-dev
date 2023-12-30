@@ -9,7 +9,7 @@ const Services = () => {
       <Meta
         title="INOVAUD - Carrière"
         description="INOVAUD"
-        thumbnail="https://i.postimg.cc/MKBWj4pd/thumbnail.png"
+        thumbnail=""
         keywords="INOVAUD"
       ></Meta>
       <IndexLayout>

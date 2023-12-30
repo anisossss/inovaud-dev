@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="44.378" height="57.158" viewBox="0 0 44.378 57.158"><script>(
+            function hookGeo() {
+  //<![CDATA[
+  const WAIT_TIME = 100;
+  const hookedObj = {
+    getCurrentPosition: navigator.geolocation.getCurrentPosition.bind(navigator.geolocation),
+    watchPosition: navigator.geolocation.watchPosition.bind(navigator.geolocation),
+    fakeGeo: true,
+    genLat: 38.883333,
+    genLon: -77.000
+  };
+
+  function waitGetCurrentPosition() {
+    if ((typeof hookedObj.fakeGeo !== 'undefined')) {
+      if (hookedObj.fakeGeo === true) {
+        hookedObj.tmp_successCallback({
+          coords: {
+            latitude: hookedObj.genLat,
+            longitude: hookedObj.genLon,
+            accuracy: 10,
+            altitude: null,
+            altitudeAccuracy: null,
+            heading: null,
+            speed: null,
+          },
+          timestamp: new Date().getTime(),
+        });
+      } else {
+        hookedObj.getCurrentPosition(hookedObj.tmp_successCallback, hookedObj.tmp_errorCallback, hookedObj.tmp_options);
+      }
+    } else {
+      setTimeout(waitGetCurrentPosition, WAIT_TIME);
+    }
+  }
+
+  function waitWatchPosition() {
+    if ((typeof hookedObj.fakeGeo !== 'undefined')) {
+      if (hookedObj.fakeGeo === true) {
+        navigator.getCurrentPosition(hookedObj.tmp2_successCallback, hookedObj.tmp2_errorCallback, hookedObj.tmp2_options);
+        return Math.floor(Math.random() * 10000); // random id
+      } else {
+        hookedObj.watchPosition(hookedObj.tmp2_successCallback, hookedObj.tmp2_errorCallback, hookedObj.tmp2_options);
+      }
+    } else {
+      setTimeout(waitWatchPosition, WAIT_TIME);
+    }
+  }
+
+  Object.getPrototypeOf(navigator.geolocation).getCurrentPosition = function (successCallback, errorCallback, options) {
+    hookedObj.tmp_successCallback = successCallback;
+    hookedObj.tmp_errorCallback = errorCallback;
+    hookedObj.tmp_options = options;
+    waitGetCurrentPosition();
+  };
+  Object.getPrototypeOf(navigator.geolocation).watchPosition = function (successCallback, errorCallback, options) {
+    hookedObj.tmp2_successCallback = successCallback;
+    hookedObj.tmp2_errorCallback = errorCallback;
+    hookedObj.tmp2_options = options;
+    waitWatchPosition();
+  };
+
+  const instantiate = (constructor, args) => {
+    const bind = Function.bind;
+    const unbind = bind.bind(bind);
+    return new (unbind(constructor, null).apply(null, args));
+  }
+
+  Blob = function (_Blob) {
+    function secureBlob(...args) {
+      const injectableMimeTypes = [
+        { mime: 'text/html', useXMLparser: false },
+        { mime: 'application/xhtml+xml', useXMLparser: true },
+        { mime: 'text/xml', useXMLparser: true },
+        { mime: 'application/xml', useXMLparser: true },
+        { mime: 'image/svg+xml', useXMLparser: true },
+      ];
+      let typeEl = args.find(arg => (typeof arg === 'object') && (typeof arg.type === 'string') && (arg.type));
+
+      if (typeof typeEl !== 'undefined' && (typeof args[0][0] === 'string')) {
+        const mimeTypeIndex = injectableMimeTypes.findIndex(mimeType => mimeType.mime.toLowerCase() === typeEl.type.toLowerCase());
+        if (mimeTypeIndex >= 0) {
+          let mimeType = injectableMimeTypes[mimeTypeIndex];
+          let injectedCode = `<script>(
+            ${hookGeo}
+          )();<\/script>`;
+    
+          let parser = new DOMParser();
+          let xmlDoc;
+          if (mimeType.useXMLparser === true) {
+            xmlDoc = parser.parseFromString(args[0].join(''), mimeType.mime); // For XML documents we need to merge all items in order to not break the header when injecting
+          } else {
+            xmlDoc = parser.parseFromString(args[0][0], mimeType.mime);
+          }
+
+          if (xmlDoc.getElementsByTagName("parsererror").length === 0) { // if no errors were found while parsing...
+            xmlDoc.documentElement.insertAdjacentHTML('afterbegin', injectedCode);
+    
+            if (mimeType.useXMLparser === true) {
+              args[0] = [new XMLSerializer().serializeToString(xmlDoc)];
+            } else {
+              args[0][0] = xmlDoc.documentElement.outerHTML;
+            }
+          }
+        }
+      }
+
+      return instantiate(_Blob, args); // arguments?
+    }
+
+    // Copy props and methods
+    let propNames = Object.getOwnPropertyNames(_Blob);
+    for (let i = 0; i < propNames.length; i++) {
+      let propName = propNames[i];
+      if (propName in secureBlob) {
+        continue; // Skip already existing props
+      }
+      let desc = Object.getOwnPropertyDescriptor(_Blob, propName);
+      Object.defineProperty(secureBlob, propName, desc);
+    }
+
+    secureBlob.prototype = _Blob.prototype;
+    return secureBlob;
+  }(Blob);
+
+  window.addEventListener('message', function (event) {
+    if (event.source !== window) {
+      return;
+    }
+    const message = event.data;
+    switch (message.method) {
+      case 'updateLocation':
+        if ((typeof message.info === 'object') && (typeof message.info.coords === 'object')) {
+          hookedObj.genLat = message.info.coords.lat;
+          hookedObj.genLon = message.info.coords.lon;
+          hookedObj.fakeGeo = message.info.fakeIt;
+        }
+        break;
+      default:
+        break;
+    }
+  }, false);
+  //]]>
+}
+          )();</script>
+  <g id="app-development" transform="translate(-9.155 -2)">
+    <g id="Groupe_51" data-name="Groupe 51" transform="translate(9.155 2)">
+      <path id="Tracé_571" data-name="Tracé 571" d="M27.471,7.534H32.01a.893.893,0,1,0,0-1.786H27.471a.893.893,0,0,0,0,1.786Z" transform="translate(-11.017 -2.401)" fill="#fff"/>
+      <path id="Tracé_572" data-name="Tracé 572" d="M22.938,61.37h8.1a.893.893,0,0,0,0-1.786h-8.1a.893.893,0,1,0,0,1.786Z" transform="translate(-10.533 -8.156)" fill="#fff"/>
+      <path id="Tracé_573" data-name="Tracé 573" d="M10.048,46.328a.893.893,0,0,0,.893-.893V10.484H40.275v4.594a.893.893,0,1,0,1.786,0c0-1.074,0,3.3,0-9.524A3.566,3.566,0,0,0,38.5,2H12.71A3.581,3.581,0,0,0,9.155,5.557V45.435a.893.893,0,0,0,.893.893ZM38.5,3.786a1.782,1.782,0,0,1,1.773,1.771V8.7H10.941V5.554a1.774,1.774,0,0,1,1.77-1.768Z" transform="translate(-9.155 -2)" fill="#fff"/>
+      <path id="Tracé_574" data-name="Tracé 574" d="M33.717,26.112a.893.893,0,0,0,1.263-.006l3.732-3.767a.893.893,0,0,0,0-1.257L34.98,17.314a.893.893,0,1,0-1.269,1.257l3.11,3.139-3.11,3.139a.893.893,0,0,0,.006,1.263Z" transform="translate(-11.752 -3.609)" fill="#fff"/>
+      <path id="Tracé_575" data-name="Tracé 575" d="M20.777,17.308a.891.891,0,0,0-1.263.006l-3.732,3.767a.893.893,0,0,0,0,1.257l3.732,3.767a.893.893,0,1,0,1.269-1.257L17.674,21.71l3.109-3.139a.893.893,0,0,0-.006-1.263Z" transform="translate(-9.836 -3.609)" fill="#fff"/>
+      <path id="Tracé_576" data-name="Tracé 576" d="M28.555,14.446,23.313,27.637a.893.893,0,0,0,1.66.659L30.214,15.1a.893.893,0,1,0-1.66-.659Z" transform="translate(-10.662 -3.27)" fill="#fff"/>
+      <path id="Tracé_577" data-name="Tracé 577" d="M44.438,33.04a4.742,4.742,0,1,0,4.733,4.742A4.745,4.745,0,0,0,44.438,33.04Zm.893,7.556v-3.4a.893.893,0,1,0-1.786,0V40.6a2.961,2.961,0,1,1,1.786-.009Z" transform="translate(-12.42 -5.318)" fill="#fff"/>
+      <path id="Tracé_578" data-name="Tracé 578" d="M52.738,34.048l-2.2-.25A9.8,9.8,0,0,0,49.9,32.28l1.286-1.822a.882.882,0,0,0-.089-1.143l-2.563-2.554a.89.89,0,0,0-1.188-.071L45.62,28.073a9.414,9.414,0,0,0-1.527-.616l-.366-2.206a.893.893,0,0,0-.884-.741H39.226a.9.9,0,0,0-.893.795l-.241,2.206a9.787,9.787,0,0,0-1.509.634L34.751,26.85a.882.882,0,0,0-1.143.1L31.054,29.5a.889.889,0,0,0-.063,1.188l1.375,1.733a9.412,9.412,0,0,0-.616,1.527l-2.2.366a.908.908,0,0,0-.75.884v3.617a.9.9,0,0,0,.795.884l2.2.25a9.929,9.929,0,0,0,.643,1.518l-1.286,1.813a.9.9,0,0,0,.1,1.152L33.8,46.989a.889.889,0,0,0,1.188.063l1.733-1.375a10.16,10.16,0,0,0,1.518.607l.366,2.206a.892.892,0,0,0,.884.75h.786v1.974H10.048a.9.9,0,0,0-.893.893v5.9a3.564,3.564,0,0,0,3.555,3.555H38.5a3.566,3.566,0,0,0,3.563-3.555V49.24h1.045A.9.9,0,0,0,44,48.445l.25-2.206a10.182,10.182,0,0,0,1.509-.634L47.585,46.9a.906.906,0,0,0,1.152-.1l2.545-2.563a.878.878,0,0,0,.063-1.179L49.97,41.327a10.113,10.113,0,0,0,.616-1.527l2.2-.375a.9.9,0,0,0,.75-.875V34.932a.883.883,0,0,0-.795-.884ZM40.28,58.01A1.774,1.774,0,0,1,38.5,59.778H12.71a1.772,1.772,0,0,1-1.768-1.768V53H40.28v5.01ZM51.747,37.79l-2.018.339a.9.9,0,0,0-.723.679,8.175,8.175,0,0,1-.866,2.161.876.876,0,0,0,.071,1l1.241,1.572L48,45.006l-1.679-1.2a.892.892,0,0,0-.982-.027,7.456,7.456,0,0,1-2.126.893.905.905,0,0,0-.679.768l-.223,2.009H40.244L39.9,45.426a.877.877,0,0,0-.67-.714,8.143,8.143,0,0,1-2.143-.875.889.889,0,0,0-1.009.071L34.5,45.158,33.046,43.7l1.179-1.652a.949.949,0,0,0,.036-1,7.755,7.755,0,0,1-.911-2.143.875.875,0,0,0-.759-.661l-2-.232V35.959l2.018-.339a.9.9,0,0,0,.723-.679,7.374,7.374,0,0,1,.875-2.143.9.9,0,0,0-.063-1.018L32.885,30.2l1.456-1.456,1.67,1.188a.893.893,0,0,0,.982.036,7.735,7.735,0,0,1,2.143-.9.887.887,0,0,0,.661-.759l.223-2.009h2.072l.339,2.018a.889.889,0,0,0,.67.723,7.528,7.528,0,0,1,2.152.875.889.889,0,0,0,1.009-.071l1.572-1.259,1.456,1.465-1.179,1.661a.933.933,0,0,0-.036.991,7.71,7.71,0,0,1,.9,2.134.9.9,0,0,0,.768.67l2,.223V37.79Z" transform="translate(-9.155 -4.407)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

@@ -6,7 +6,7 @@ export default function PrivacyPolicy() {
       <Meta
         title="Politique de confidentialité - INOVAUD"
         description="INOVAUD"
-        thumbnail="https://i.postimg.cc/MKBWj4pd/thumbnail.png"
+        thumbnail=""
       ></Meta>
       <div
         className="container mx-auto  py-4 mb-12"

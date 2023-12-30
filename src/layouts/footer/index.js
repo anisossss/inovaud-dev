@@ -27,7 +27,7 @@ export const Footer = () => {
             </Link>
             <br></br>
             <a
-              className="text-white font-semibold block pb-2 text-sm"
+              className="text-white font-semibold block pb-2 "
               href="https://maps.app.goo.gl/msGRsYuy9Rm5w7Pn6"
               target="_blank"
               rel="noreferrer"
@@ -45,13 +45,13 @@ export const Footer = () => {
 
             <a
               href="tel:+41791924259"
-              className="text-white  font-semibold block pb-2 text-sm"
+              className="text-white  font-semibold block pb-2 "
             >
               + 41 79 192 42 59
             </a>
             <a
               href="mailto:info@inovaud.ch"
-              className="text-white  font-semibold block pb-2 text-sm"
+              className="text-white  font-semibold block pb-2 "
             >
               info@inovaud.ch
             </a>
@@ -60,14 +60,17 @@ export const Footer = () => {
           <Grid className="w-full lg:w-8/12 px-12 mt-12">
             <Grid className="flex flex-wrap items-top mb-6">
               <Grid className="w-full lg:w-4/12 px-4 ml-auto">
-                <span className="block uppercase text-blueGray-200 text-sm font-semibold mb-2">
+                <Text
+                  span
+                  className="block uppercase text-blueGray-200  font-semibold mb-2"
+                >
                   QUI SOMMES-NOUS?
-                </span>
+                </Text>
                 <br></br>
                 <ul className="list-unstyled">
                   <li>
                     <a
-                      className="text-white hover:text-blueGray-300 font-semibold block pb-2 text-sm"
+                      className="text-white hover:text-blueGray-300 font-semibold block pb-2 "
                       href="#"
                     >
                       <Link href="#">Acceuil</Link>
@@ -76,7 +79,7 @@ export const Footer = () => {
                   <li>
                     <a
                       href="#"
-                      className="text-white hover:text-blueGray-300 font-semibold block pb-2 text-sm"
+                      className="text-white hover:text-blueGray-300 font-semibold block pb-2 "
                     >
                       <Link href="#"> Services</Link>
                     </a>
@@ -84,7 +87,7 @@ export const Footer = () => {
                   <li>
                     <a
                       href="#"
-                      className="text-white hover:text-blueGray-300 font-semibold block pb-2 text-sm"
+                      className="text-white hover:text-blueGray-300 font-semibold block pb-2 "
                     >
                       <Link href="#">Notre Blog</Link>
                     </a>
@@ -92,14 +95,17 @@ export const Footer = () => {
                 </ul>
               </Grid>
               <Grid className="w-full lg:w-4/12 px-4 ml-auto">
-                <span className="block uppercase text-white text-sm font-semibold mb-2">
+                <Text
+                  span
+                  className="block uppercase text-white  font-semibold mb-2"
+                >
                   NOS SERVICES
-                </span>
+                </Text>
                 <br></br>
                 <ul className="list-unstyled">
                   <li>
                     <a
-                      className="text-white hover:text-blueGray-300 font-semibold block pb-2 text-sm"
+                      className="text-white hover:text-blueGray-300 font-semibold block pb-2 "
                       href="#"
                     >
                       <Link href="#">Développement Web</Link>
@@ -108,7 +114,7 @@ export const Footer = () => {
                   <li>
                     <a
                       href="#"
-                      className="text-white hover:text-blueGray-300 font-semibold block pb-2 text-sm"
+                      className="text-white hover:text-blueGray-300 font-semibold block pb-2 "
                     >
                       <Link href="#"> Développement Mobile</Link>
                     </a>
@@ -116,7 +122,7 @@ export const Footer = () => {
                   <li>
                     <a
                       href="#"
-                      className="text-white hover:text-blueGray-300 font-semibold block pb-2 text-sm"
+                      className="text-white hover:text-blueGray-300 font-semibold block pb-2 "
                     >
                       <Link href="#">Intelligence Artificielle</Link>
                     </a>
@@ -128,8 +134,10 @@ export const Footer = () => {
         </Grid>
         <Grid className="flex flex-wrap items-center md:justify-between justify-center ">
           <Grid className="w-full md:w-4/12 px-4 mx-auto text-center">
-            <Grid className="text-sm text-blueGray-500 font-semibold py-12">
-              Copyright © {new Date().getFullYear()} INOVAUD Inc.{" "}
+            <Grid className="py-12">
+              <Text b>
+                Copyright © {new Date().getFullYear()} INOVAUD Inc.{" "}
+              </Text>
             </Grid>
           </Grid>
         </Grid>

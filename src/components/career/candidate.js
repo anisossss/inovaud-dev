@@ -42,19 +42,33 @@ export const CandidateForm = () => {
           </Grid>
           <Grid className="candidate_form">
             <Grid css={{ width: "100%" }}>
-              <Input label="Nom" placeholder=" " fullWidth />
+              <Input
+                label={<span style={{ fontSize: "18px" }}>Nom</span>}
+                placeholder=" "
+                fullWidth
+              />
             </Grid>
             <Grid>
-              <Input label="Adresse e-mail" placeholder="" fullWidth />
+              <Input
+                label={<span style={{ fontSize: "18px" }}>Prénom</span>}
+                placeholder=""
+                fullWidth
+              />
             </Grid>
             <Grid>
-              <Input label="Numéro de téléphone" placeholder="" fullWidth />
+              <Input
+                label={<span style={{ fontSize: "18px" }}>Email</span>}
+                placeholder=""
+                fullWidth
+              />
             </Grid>
+
             <Grid>
-              <Input label="Disponibilité" placeholder="" fullWidth />
-            </Grid>
-            <Grid>
-              <Textarea label="Message" placeholder="" fullWidth />
+              <Textarea
+                label={<span style={{ fontSize: "18px" }}>Message</span>}
+                placeholder=""
+                fullWidth
+              />
             </Grid>
             <br></br>
             <Grid className="row block">

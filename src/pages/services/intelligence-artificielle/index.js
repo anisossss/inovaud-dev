@@ -2,7 +2,6 @@ import React from "react";
 import Meta from "../../../components/seo/index";
 import ServiceDetail from "../../../components/services/GenericServices";
 import { IndexLayout } from "../../../layouts/IndexLayout";
-import animationData from "../../../../public/assets/lotties/ai.json";
 
 const AiService = () => {
   return (
@@ -10,14 +9,13 @@ const AiService = () => {
       <Meta
         title="INOVAUD - Intelligence Artificielle"
         description="INOVAUD"
-        thumbnail="https://i.postimg.cc/MKBWj4pd/thumbnail.png"
         keywords="INOVAUD"
       ></Meta>
       <IndexLayout>
         <ServiceDetail
           serviceName="Intelligence Artificielle"
           description="L'intelligence artificielle (IA) est la simulation de l'intelligence humaine dans des machines programmées pour penser et agir comme des humains. Inovaud fournit à la fois une expertise technique et un soutien réglementaire pour développer des algorithmes de compréhension du langage naturel, de reconnaissance d'images, d'apprentissage par l'expérience et de prise de décision."
-          animationData={animationData} // Pass your animation data here
+          image="/assets/images/services/ai.svg"
           stepsData={{
             step1title: "Définition de la problématique",
             step1desc:
@@ -42,6 +40,7 @@ const AiService = () => {
       </IndexLayout>
     </>
   );
+  image = "/assets/images/services/mobiledev.svg";
 };
 
 export async function getStaticProps() {

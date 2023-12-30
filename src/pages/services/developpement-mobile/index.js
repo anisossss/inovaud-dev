@@ -2,22 +2,19 @@ import React from "react";
 import Meta from "../../../components/seo/index";
 import ServiceDetail from "../../../components/services/GenericServices";
 import { IndexLayout } from "../../../layouts/IndexLayout";
-import animationData from "../../../../public/assets/lotties/mobiledev.json";
-
 const DevMobileService = () => {
   return (
     <>
       <Meta
         title="INOVAUD - Développement Mobile"
         description="INOVAUD"
-        thumbnail="https://i.postimg.cc/MKBWj4pd/thumbnail.png"
         keywords="INOVAUD"
       ></Meta>
       <IndexLayout>
         <ServiceDetail
           serviceName="Développement Mobile"
           description="Une application mobile est un canal de communication et de distribution devenu indispensable. Notre équipe Développement Mobile est à votre service pour concevoir et lancer une nouvelle application – IOS ou Android – ou pour optimiser toute solution existante. La réalité augmentée et la réalité virtuelle peuvent faire partie de la solution afin d'offrir une expérience utilisateur personnalisée et stimulante."
-          animationData={animationData}
+          image="/assets/images/services/mobiledev.svg"
           stepsData={{
             step1title: "Étude de vos besoins",
             step1desc:

@@ -9,7 +9,7 @@ const Candidate = () => {
       <Meta
         title="INOVAUD - Postuler votre candidature"
         description="INOVAUD"
-        thumbnail="https://i.postimg.cc/MKBWj4pd/thumbnail.png"
+        thumbnail=""
         keywords="INOVAUD"
       ></Meta>
       <IndexLayout>

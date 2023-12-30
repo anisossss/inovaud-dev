@@ -47,8 +47,10 @@ export const Nav = () => {
         "& .nextui-navbar-container": {
           position: "fixed",
           top: 0,
-          justifyContent: "space-around",
+          justifyContent: "space-between",
           padding: 5,
+          paddingLeft: "8em",
+          paddingRight: "8em",
         },
         "& .nav-link": {
           position: "relative",
@@ -68,14 +70,13 @@ export const Nav = () => {
         },
 
         "& .nav-link.active-link::after": {
-          // Adjusted style for active link
           opacity: 1,
-          transform: "translateY(2px)", // Adjust the distance of the line from the text
+          transform: "translateY(2px)",
         },
 
         "& .nav-link:hover::after, & .nav-link:focus::after": {
           opacity: 1,
-          transform: "translateY(2px)", // Adjust the distance of the line from the text
+          transform: "translateY(2px)",
         },
       }}
     >
@@ -106,7 +107,9 @@ export const Nav = () => {
           <Text span>Carrière</Text>
         </ActiveLink>
         <ActiveLink href="/contact">
-          <button className="main-button">Contact</button>
+          <button className="main-button">
+            <Text span>Contact</Text>
+          </button>
         </ActiveLink>
       </Navbar.Content>
 

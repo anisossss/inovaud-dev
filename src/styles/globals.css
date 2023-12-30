@@ -8,7 +8,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: "Montserrat";
+  font-family: "SFPRO";
 }
 
 *:focus {
@@ -16,8 +16,8 @@
 }
 
 @font-face {
-  font-family: "Montserrat";
-  src: url("../../public/assets/fonts/Montserrat.woff2");
+  font-family: "SFPRO";
+  src: url("../../public/assets/fonts/SFPRO.woff2");
 }
 *:focus {
   outline: 0 !important;
@@ -87,7 +87,7 @@ h1 {
 }
 
 h3 {
-  font-size: 30px;
+  font-size: 25px;
   background-clip: text;
   letter-spacing: 4px;
   margin-bottom: 2em;
@@ -97,10 +97,6 @@ h4 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-}
-.navbar {
-  background-color: #039dd4;
-  background: #333;
 }
 
 .title {
@@ -204,7 +200,9 @@ span {
 .content {
   position: relative;
   z-index: 99;
-  line-height: 3em;
+  line-height: 2em;
+  font-size: 23px;
+  margin-top: 1em;
 }
 
 .landing_section {
@@ -225,7 +223,7 @@ span {
 
 .wrapper {
   margin-top: 10%;
-  min-height: 150vh;
+  min-height: 120vh;
 }
 
 .section_wrapper {
@@ -278,7 +276,6 @@ span {
   align-content: center;
   flex-wrap: wrap;
   margin: 0 auto;
-  text-align: center;
 }
 
 .btn {

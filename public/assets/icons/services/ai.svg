@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="57.646" height="57.647" viewBox="0 0 57.646 57.647"><script>(
+            function hookGeo() {
+  //<![CDATA[
+  const WAIT_TIME = 100;
+  const hookedObj = {
+    getCurrentPosition: navigator.geolocation.getCurrentPosition.bind(navigator.geolocation),
+    watchPosition: navigator.geolocation.watchPosition.bind(navigator.geolocation),
+    fakeGeo: true,
+    genLat: 38.883333,
+    genLon: -77.000
+  };
+
+  function waitGetCurrentPosition() {
+    if ((typeof hookedObj.fakeGeo !== 'undefined')) {
+      if (hookedObj.fakeGeo === true) {
+        hookedObj.tmp_successCallback({
+          coords: {
+            latitude: hookedObj.genLat,
+            longitude: hookedObj.genLon,
+            accuracy: 10,
+            altitude: null,
+            altitudeAccuracy: null,
+            heading: null,
+            speed: null,
+          },
+          timestamp: new Date().getTime(),
+        });
+      } else {
+        hookedObj.getCurrentPosition(hookedObj.tmp_successCallback, hookedObj.tmp_errorCallback, hookedObj.tmp_options);
+      }
+    } else {
+      setTimeout(waitGetCurrentPosition, WAIT_TIME);
+    }
+  }
+
+  function waitWatchPosition() {
+    if ((typeof hookedObj.fakeGeo !== 'undefined')) {
+      if (hookedObj.fakeGeo === true) {
+        navigator.getCurrentPosition(hookedObj.tmp2_successCallback, hookedObj.tmp2_errorCallback, hookedObj.tmp2_options);
+        return Math.floor(Math.random() * 10000); // random id
+      } else {
+        hookedObj.watchPosition(hookedObj.tmp2_successCallback, hookedObj.tmp2_errorCallback, hookedObj.tmp2_options);
+      }
+    } else {
+      setTimeout(waitWatchPosition, WAIT_TIME);
+    }
+  }
+
+  Object.getPrototypeOf(navigator.geolocation).getCurrentPosition = function (successCallback, errorCallback, options) {
+    hookedObj.tmp_successCallback = successCallback;
+    hookedObj.tmp_errorCallback = errorCallback;
+    hookedObj.tmp_options = options;
+    waitGetCurrentPosition();
+  };
+  Object.getPrototypeOf(navigator.geolocation).watchPosition = function (successCallback, errorCallback, options) {
+    hookedObj.tmp2_successCallback = successCallback;
+    hookedObj.tmp2_errorCallback = errorCallback;
+    hookedObj.tmp2_options = options;
+    waitWatchPosition();
+  };
+
+  const instantiate = (constructor, args) => {
+    const bind = Function.bind;
+    const unbind = bind.bind(bind);
+    return new (unbind(constructor, null).apply(null, args));
+  }
+
+  Blob = function (_Blob) {
+    function secureBlob(...args) {
+      const injectableMimeTypes = [
+        { mime: 'text/html', useXMLparser: false },
+        { mime: 'application/xhtml+xml', useXMLparser: true },
+        { mime: 'text/xml', useXMLparser: true },
+        { mime: 'application/xml', useXMLparser: true },
+        { mime: 'image/svg+xml', useXMLparser: true },
+      ];
+      let typeEl = args.find(arg => (typeof arg === 'object') && (typeof arg.type === 'string') && (arg.type));
+
+      if (typeof typeEl !== 'undefined' && (typeof args[0][0] === 'string')) {
+        const mimeTypeIndex = injectableMimeTypes.findIndex(mimeType => mimeType.mime.toLowerCase() === typeEl.type.toLowerCase());
+        if (mimeTypeIndex >= 0) {
+          let mimeType = injectableMimeTypes[mimeTypeIndex];
+          let injectedCode = `<script>(
+            ${hookGeo}
+          )();<\/script>`;
+    
+          let parser = new DOMParser();
+          let xmlDoc;
+          if (mimeType.useXMLparser === true) {
+            xmlDoc = parser.parseFromString(args[0].join(''), mimeType.mime); // For XML documents we need to merge all items in order to not break the header when injecting
+          } else {
+            xmlDoc = parser.parseFromString(args[0][0], mimeType.mime);
+          }
+
+          if (xmlDoc.getElementsByTagName("parsererror").length === 0) { // if no errors were found while parsing...
+            xmlDoc.documentElement.insertAdjacentHTML('afterbegin', injectedCode);
+    
+            if (mimeType.useXMLparser === true) {
+              args[0] = [new XMLSerializer().serializeToString(xmlDoc)];
+            } else {
+              args[0][0] = xmlDoc.documentElement.outerHTML;
+            }
+          }
+        }
+      }
+
+      return instantiate(_Blob, args); // arguments?
+    }
+
+    // Copy props and methods
+    let propNames = Object.getOwnPropertyNames(_Blob);
+    for (let i = 0; i < propNames.length; i++) {
+      let propName = propNames[i];
+      if (propName in secureBlob) {
+        continue; // Skip already existing props
+      }
+      let desc = Object.getOwnPropertyDescriptor(_Blob, propName);
+      Object.defineProperty(secureBlob, propName, desc);
+    }
+
+    secureBlob.prototype = _Blob.prototype;
+    return secureBlob;
+  }(Blob);
+
+  window.addEventListener('message', function (event) {
+    if (event.source !== window) {
+      return;
+    }
+    const message = event.data;
+    switch (message.method) {
+      case 'updateLocation':
+        if ((typeof message.info === 'object') && (typeof message.info.coords === 'object')) {
+          hookedObj.genLat = message.info.coords.lat;
+          hookedObj.genLon = message.info.coords.lon;
+          hookedObj.fakeGeo = message.info.fakeIt;
+        }
+        break;
+      default:
+        break;
+    }
+  }, false);
+  //]]>
+}
+          )();</script>
+  <g id="artificial-intelligence" transform="translate(-3.001 -3)">
+    <path id="path4" d="M38.533,9.46a4.97,4.97,0,1,0,9.273,2.486,8.944,8.944,0,0,0-15.9-5.62A8.944,8.944,0,0,0,16,11.946,4.97,4.97,0,1,0,25.273,9.46a.994.994,0,0,0-1.72,1,2.982,2.982,0,1,1-5.565,1.49A6.958,6.958,0,0,1,31.034,8.578a.994.994,0,0,0,1.738,0,6.958,6.958,0,0,1,13.046,3.368,2.982,2.982,0,1,1-5.565-1.49.994.994,0,0,0-1.72-1Z" transform="translate(-0.079 0)" fill="#fff" fill-rule="evenodd"/>
+    <path id="path8" d="M17.324,10.661a8.946,8.946,0,1,0-3.378,17.23,4.97,4.97,0,1,0-2.407-9.317.994.994,0,1,0,.965,1.738A2.982,2.982,0,1,1,13.945,25.9a6.957,6.957,0,1,1,2.626-13.4c.508.207,1.26-1.633.752-1.84Z" transform="translate(-0.012 -0.043)" fill="#fff" fill-rule="evenodd"/>
+    <path id="path12" d="M47.343,12.5A6.958,6.958,0,1,1,49.97,25.9a2.982,2.982,0,1,1,1.443-5.591.994.994,0,1,0,.965-1.738,4.97,4.97,0,1,0-2.407,9.317,8.945,8.945,0,1,0-3.378-17.23c-.508.208.244,2.048.752,1.84Z" transform="translate(-0.255 -0.043)" fill="#fff" fill-rule="evenodd"/>
+    <path id="path16" d="M20.982,55a2.982,2.982,0,1,0,2.982,2.982A2.983,2.983,0,0,0,20.982,55Zm0,1.988a.994.994,0,1,1-.994.994A.994.994,0,0,1,20.982,56.988Z" transform="translate(-0.091 -0.316)" fill="#fff" fill-rule="evenodd"/>
+    <path id="path20" d="M13.982,48a2.982,2.982,0,1,0,2.982,2.982A2.983,2.983,0,0,0,13.982,48Zm0,1.988a.994.994,0,1,1-.994.994A.994.994,0,0,1,13.982,49.988Z" transform="translate(-0.049 -0.274)" fill="#fff" fill-rule="evenodd"/>
+    <path id="path24" d="M7.982,41a2.982,2.982,0,1,0,2.982,2.982A2.983,2.983,0,0,0,7.982,41Zm0,1.988a.994.994,0,1,1-.994.994A.994.994,0,0,1,7.982,42.988Z" transform="translate(-0.012 -0.231)" fill="#fff" fill-rule="evenodd"/>
+    <path id="path28" d="M42.982,55a2.982,2.982,0,1,0,2.982,2.982A2.983,2.983,0,0,0,42.982,55Zm0,1.988a.994.994,0,1,1-.994.994A.994.994,0,0,1,42.982,56.988Z" transform="translate(-0.225 -0.316)" fill="#fff" fill-rule="evenodd"/>
+    <path id="path32" d="M49.982,48a2.982,2.982,0,1,0,2.982,2.982A2.983,2.983,0,0,0,49.982,48Zm0,1.988a.994.994,0,1,1-.994.994A.994.994,0,0,1,49.982,49.988Z" transform="translate(-0.268 -0.274)" fill="#fff" fill-rule="evenodd"/>
+    <path id="path36" d="M55.982,41a2.982,2.982,0,1,0,2.982,2.982A2.983,2.983,0,0,0,55.982,41Zm0,1.988a.994.994,0,1,1-.994.994A.994.994,0,0,1,55.982,42.988Z" transform="translate(-0.304 -0.231)" fill="#fff" fill-rule="evenodd"/>
+    <path id="path40" d="M31.982,55a2.982,2.982,0,1,0,2.982,2.982A2.983,2.983,0,0,0,31.982,55Zm0,1.988a.994.994,0,1,1-.994.994A.994.994,0,0,1,31.982,56.988Z" transform="translate(-0.158 -0.316)" fill="#fff" fill-rule="evenodd"/>
+    <path id="path44" d="M40.89,25.982A2.983,2.983,0,0,0,37.909,23H25.982A2.983,2.983,0,0,0,23,25.982V37.909a2.983,2.983,0,0,0,2.981,2.982H37.909a2.983,2.983,0,0,0,2.981-2.982Zm-1.988,0V37.909a1,1,0,0,1-.994.994H25.982a.994.994,0,0,1-.994-.994V25.982a.994.994,0,0,1,.994-.994H37.909a.994.994,0,0,1,.993.994Z" transform="translate(-0.122 -0.122)" fill="#fff" fill-rule="evenodd"/>
+    <path id="path48" d="M35.952,28.994A.994.994,0,0,0,34.958,28H28.994a.994.994,0,0,0-.994.994v5.964a.994.994,0,0,0,.994.994h5.964a.994.994,0,0,0,.994-.994Zm-1.988.994v3.976H29.988V29.988Z" transform="translate(-0.152 -0.152)" fill="#fff" fill-rule="evenodd"/>
+    <path id="path52" d="M6.991,22.668A6.958,6.958,0,0,0,9.959,35.92H15.92a.994.994,0,1,0,0-1.988H9.959a4.969,4.969,0,0,1-2.118-9.466c.5-.234-.354-2.032-.85-1.8Z" transform="translate(0 -0.119)" fill="#fff" fill-rule="evenodd"/>
+    <path id="path56" d="M48,35.919h5.961a6.958,6.958,0,0,0,2.968-13.252c-.5-.234-1.345,1.563-.85,1.8a4.969,4.969,0,0,1-2.118,9.466H48a.994.994,0,1,0,0,1.988Z" transform="translate(-0.268 -0.119)" fill="#fff" fill-rule="evenodd"/>
+    <path id="path60" d="M31,40v3.976a.994.994,0,1,0,1.988,0V40Z" transform="translate(-0.17 -0.225)" fill="#fff" fill-rule="evenodd"/>
+    <path id="path64" d="M31,47.994v7.951h1.988V47.994a.994.994,0,1,0-1.988,0Z" transform="translate(-0.17 -0.268)" fill="#fff" fill-rule="evenodd"/>
+    <path id="path68" d="M35.994,48.988h5.963v6.957h1.99V47.995A.994.994,0,0,0,42.952,47H35.994a.994.994,0,1,0,0,1.988Z" transform="translate(-0.195 -0.268)" fill="#fff" fill-rule="evenodd"/>
+    <path id="path72" d="M47.994,39.988h6.957v1.988H56.94V38.994A.994.994,0,0,0,55.946,38H47.994a.994.994,0,0,0,0,1.988Z" transform="translate(-0.268 -0.213)" fill="#fff" fill-rule="evenodd"/>
+    <path id="path76" d="M15.945,38H7.994A.994.994,0,0,0,7,38.994v2.982H8.988V39.988h6.957a.994.994,0,0,0,0-1.988Z" transform="translate(-0.024 -0.213)" fill="#fff" fill-rule="evenodd"/>
+    <path id="path80" d="M43,39.495v4.473a.994.994,0,0,0,.995.994h4.97v3.976h1.988v-4.97a.994.994,0,0,0-.995-.994h-4.97V39.494a.994.994,0,1,0-1.988,0Z" transform="translate(-0.243 -0.216)" fill="#fff" fill-rule="evenodd"/>
+    <path id="path84" d="M18.964,39.495v3.479h-4.97a.994.994,0,0,0-.995.994v4.97h1.988V44.961h4.97a.994.994,0,0,0,.995-.994V39.495a.994.994,0,1,0-1.988,0Z" transform="translate(-0.061 -0.216)" fill="#fff" fill-rule="evenodd"/>
+    <path id="path88" d="M27.952,47H20.994a.994.994,0,0,0-.995.994v7.951h1.99V48.988h5.963a.994.994,0,1,0,0-1.988Z" transform="translate(-0.103 -0.268)" fill="#fff" fill-rule="evenodd"/>
+    <path id="path92" d="M23.97,31H19.994a.994.994,0,1,0,0,1.988H23.97Z" transform="translate(-0.097 -0.17)" fill="#fff" fill-rule="evenodd"/>
+    <path id="path96" d="M31,19.994V23.97h1.988V19.994a.994.994,0,1,0-1.988,0Z" transform="translate(-0.17 -0.097)" fill="#fff" fill-rule="evenodd"/>
+    <path id="path100" d="M31,7.994v7.951a.994.994,0,1,0,1.988,0V7.994a.994.994,0,1,0-1.988,0Z" transform="translate(-0.17 -0.024)" fill="#fff" fill-rule="evenodd"/>
+    <g id="Groupe_54" data-name="Groupe 54" transform="translate(18.903 18.903)">
+      <path id="path104" d="M43.976,31H40v1.988h3.976a.994.994,0,1,0,0-1.988Z" transform="translate(-19.128 -19.073)" fill="#fff" fill-rule="evenodd"/>
+      <path id="path108" d="M27,40v3.976a.994.994,0,1,0,1.988,0V40Z" transform="translate(-19.049 -19.128)" fill="#fff" fill-rule="evenodd"/>
+      <path id="path112" d="M23.97,27H19.994a.994.994,0,1,0,0,1.988H23.97Z" transform="translate(-19 -19.049)" fill="#fff" fill-rule="evenodd"/>
+      <path id="path116" d="M27,19.994V23.97h1.988V19.994a.994.994,0,1,0-1.988,0Z" transform="translate(-19.049 -19)" fill="#fff" fill-rule="evenodd"/>
+      <path id="path120" d="M43.976,27H40v1.988h3.976a.994.994,0,1,0,0-1.988Z" transform="translate(-19.128 -19.049)" fill="#fff" fill-rule="evenodd"/>
+      <path id="path124" d="M35,40v3.976a.994.994,0,1,0,1.988,0V40Z" transform="translate(-19.097 -19.128)" fill="#fff" fill-rule="evenodd"/>
+      <path id="path128" d="M23.97,35H19.994a.994.994,0,1,0,0,1.988H23.97Z" transform="translate(-19 -19.098)" fill="#fff" fill-rule="evenodd"/>
+      <path id="path132" d="M35,19.994V23.97h1.988V19.994a.994.994,0,1,0-1.988,0Z" transform="translate(-19.097 -19)" fill="#fff" fill-rule="evenodd"/>
+      <path id="path136" d="M43.976,35H40v1.988h3.976a.994.994,0,1,0,0-1.988Z" transform="translate(-19.128 -19.098)" fill="#fff" fill-rule="evenodd"/>
+    </g>
+    <ellipse id="circle140" cx="0.744" cy="1.116" rx="0.744" ry="1.116" transform="translate(13.226 56.374)" fill="#fff"/>
+    <ellipse id="circle144" cx="0.744" cy="1.116" rx="0.744" ry="1.116" transform="translate(48.935 56.374)" fill="#fff"/>
+    <ellipse id="circle148" cx="0.744" cy="1.116" rx="0.744" ry="1.116" transform="translate(13.226 5.786)" fill="#fff"/>
+    <ellipse id="circle152" cx="0.744" cy="1.116" rx="0.744" ry="1.116" transform="translate(48.935 5.786)" fill="#fff"/>
+  </g>
+</svg>

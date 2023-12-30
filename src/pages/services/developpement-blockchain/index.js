@@ -2,7 +2,6 @@ import React from "react";
 import Meta from "../../../components/seo/index";
 import ServiceDetail from "../../../components/services/GenericServices";
 import { IndexLayout } from "../../../layouts/IndexLayout";
-import animationData from "../../../../public/assets/lotties/blockchain.json";
 
 const BlockchainService = () => {
   return (
@@ -10,14 +9,13 @@ const BlockchainService = () => {
       <Meta
         title="INOVAUD - Développement Blockchain"
         description="INOVAUD"
-        thumbnail="https://i.postimg.cc/MKBWj4pd/thumbnail.png"
         keywords="INOVAUD"
       ></Meta>
       <IndexLayout>
         <ServiceDetail
           serviceName="Développement Blockchain"
           description="La blockchain est un registre de base de données décentralisé, immuable et transparent. Nos experts en blockchain s'engagent à vous fournir une DApp (application décentralisée) au service de votre vision. Ils vous aideront à identifier les possibilités d'utilisation de cette technologie avancée pour optimiser vos transactions, réduire vos coûts et créer de nouveaux modèles d'affaires."
-          animationData={animationData}
+          image="/assets/images/services/blockchain.svg"
           stepsData={{
             step1title: "1. Étude de vos besoins",
             step1desc:

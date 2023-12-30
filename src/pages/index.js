@@ -57,7 +57,7 @@ const Home = () => {
       <Meta
         title="INOVAUD - Acceuil"
         description="INOVAUD"
-        thumbnail="https://i.postimg.cc/MKBWj4pd/thumbnail.png"
+        thumbnail=""
         keywords="INOVAUD"
       ></Meta>
       <IndexLayout>
@@ -101,7 +101,12 @@ const Home = () => {
           </Grid>
         </div>
         <br></br>
-        <ServicesCards />
+        <Grid align="center">
+          <Grid>
+            <Text h3>NOS SERVICES</Text>
+          </Grid>
+          <ServicesCards />
+        </Grid>
         <Solution />
         <Workflow />{" "}
         <div ref={pyramid4}>

@@ -9,7 +9,7 @@ export default function Contact() {
       <Meta
         title="Contactez-nous - INOVAUD"
         description="INOVAUD"
-        thumbnail="https://i.postimg.cc/MKBWj4pd/thumbnail.png"
+        thumbnail=""
         keywords="INOVAUD"
       ></Meta>
       <IndexLayout>
