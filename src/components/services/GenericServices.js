@@ -74,9 +74,7 @@ const ServiceDetail = ({ serviceName, description, image, stepsData }) => {
             <Grid>
               <Text h3>{serviceName}</Text>
               <br></br>
-              <Text span size={"$md"}>
-                {description}
-              </Text>
+              <Text span>{description}</Text>
             </Grid>
           </Grid>
           <Grid>
