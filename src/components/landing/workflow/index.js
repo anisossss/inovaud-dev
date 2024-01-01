@@ -38,7 +38,7 @@ export const Workflow = () => {
   ];
   return (
     <>
-      <Grid align="center">
+      <Grid align="center" css={{ "@smMax": { marginTop: "6em" } }}>
         <Grid>
           <Text h3 css={{ textTransform: "uppercase" }}>
             Notre Workflow

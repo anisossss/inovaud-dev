@@ -19,7 +19,10 @@ export const Values = () => {
   ];
 
   return (
-    <Grid align="center" css={{ marginTop: "10%" }}>
+    <Grid
+      align="center"
+      css={{ marginTop: "10%", "@smMax": { marginTop: "6em" } }}
+    >
       <Text h3 css={{ textTransform: "uppercase" }}>
         NOS VALEURS FONDAMENTALES
       </Text>
