@@ -73,7 +73,7 @@ export const Footer = () => {
                       className="text-white hover:text-blueGray-300 font-semibold block pb-2 "
                       href="#"
                     >
-                      <Link href="#">Acceuil</Link>
+                      <Link href="/">Acceuil</Link>
                     </a>
                   </li>
                   <li>
@@ -81,7 +81,7 @@ export const Footer = () => {
                       href="#"
                       className="text-white hover:text-blueGray-300 font-semibold block pb-2 "
                     >
-                      <Link href="#"> Services</Link>
+                      <Link href="/services">Services</Link>
                     </a>
                   </li>
                   <li>
@@ -89,7 +89,7 @@ export const Footer = () => {
                       href="#"
                       className="text-white hover:text-blueGray-300 font-semibold block pb-2 "
                     >
-                      <Link href="#">Notre Blog</Link>
+                      <Link href="/carriere">Carrière</Link>
                     </a>
                   </li>
                 </ul>
@@ -108,7 +108,9 @@ export const Footer = () => {
                       className="text-white hover:text-blueGray-300 font-semibold block pb-2 "
                       href="#"
                     >
-                      <Link href="#">Développement Web</Link>
+                      <Link href="/services/developpement-web">
+                        Développement Web
+                      </Link>
                     </a>
                   </li>
                   <li>
@@ -116,7 +118,9 @@ export const Footer = () => {
                       href="#"
                       className="text-white hover:text-blueGray-300 font-semibold block pb-2 "
                     >
-                      <Link href="#"> Développement Mobile</Link>
+                      <Link href="/services/developpement-mobile">
+                        Développement Mobile
+                      </Link>
                     </a>
                   </li>
                   <li>
@@ -124,7 +128,9 @@ export const Footer = () => {
                       href="#"
                       className="text-white hover:text-blueGray-300 font-semibold block pb-2 "
                     >
-                      <Link href="#">Intelligence Artificielle</Link>
+                      <Link href="/services/intelligence-artificielle">
+                        Intelligence Artificielle
+                      </Link>
                     </a>
                   </li>
                 </ul>
