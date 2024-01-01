@@ -17,6 +17,7 @@ export const Hero = () => {
             width: "100%",
             height: "100%",
             left: "22%",
+            "@smMax": { left: "0%" },
           }}
         >
           <Image
@@ -28,7 +29,10 @@ export const Hero = () => {
         </Grid>
       </Fade>
 
-      <Grid css={{ padding: "10%", margin: "auto" }} align="center">
+      <Grid
+        css={{ padding: "10%", margin: "auto", "@smMax": { marginTop: "4em" } }}
+        align="center"
+      >
         <Fade top>
           <Grid>
             <Text

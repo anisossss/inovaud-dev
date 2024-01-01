@@ -65,7 +65,7 @@ export const ServicesCards = () => {
         }}
       >
         {cards.map(({ text, link, icon }) => (
-          <Grid xs={12} sm={3} md={3} key={text} justify="center">
+          <Grid xs={12} sm={6} md={3} key={text} justify="center">
             <Link href={`/services/${link}`}>
               <Card
                 className="card_hover "

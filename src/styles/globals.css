@@ -188,6 +188,23 @@ span {
   animation: float 6s ease-in-out infinite;
   z-index: 0;
 }
+@media screen and (max-width: 763px) {
+  .pyramid1 {
+    display: none;
+  }
+  .pyramid2 {
+    display: none;
+  }
+  .pyramid3 {
+    display: none;
+  }
+  .pyramid4 {
+    display: none;
+  }
+  .content {
+    font-size: 10px;
+  }
+}
 .green_path1 {
   width: 900px;
   height: 900px;
@@ -237,7 +254,6 @@ span {
 @media screen and (max-width: 763px) {
   h3,
   span {
-    font-size: smaller;
   }
   .candidate_wrapper {
   }
@@ -262,10 +278,25 @@ span {
 .service_section {
   margin-top: 50em;
   padding: 10em;
-  width: 90%;
   margin: auto;
+  line-height: 2.4em;
 }
-
+@media screen and (max-width: 763px) {
+  .service_section {
+    margin-top: 4em;
+    padding: 2em;
+  }
+  .notfound {
+    margin-left: -5em;
+  }
+  footer {
+    margin-top: 7em;
+  }
+}
+.notfound {
+  height: 100vh;
+  padding: 8em;
+}
 .timeline {
   margin-top: 10em;
 }
@@ -332,7 +363,7 @@ span {
   background-color: transparent;
   width: 290px;
   height: 200px;
-  perspective: 1000px; /* Required to give the depth effect */
+  perspective: 1000px;
 }
 
 .flip-card-inner {
@@ -341,7 +372,7 @@ span {
   height: 100%;
   text-align: center;
   transition: transform 0.6s;
-  transform-style: preserve-3d; /* Keep the 3D effect during the flip */
+  transform-style: preserve-3d;
 }
 
 .flip-card:hover .flip-card-inner {
@@ -353,17 +384,12 @@ span {
   position: absolute;
   width: 100%;
   height: 100%;
-  backface-visibility: hidden; /* Hides the side not facing the screen */
+  backface-visibility: hidden;
   display: flex;
-  align-items: center; /* This centers the front and back content */
+  align-items: center;
   justify-content: center;
 }
 
-.flip-card-front {
-  /* Front Face styling */
-}
-
 .flip-card-back {
-  /* Back Face styling */
-  transform: rotateY(180deg); /* This rotates the back side into position */
+  transform: rotateY(180deg);
 }

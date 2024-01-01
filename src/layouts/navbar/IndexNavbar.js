@@ -27,7 +27,7 @@ export const Nav = () => {
       title: "Acceuil",
     },
     {
-      href: "/serives",
+      href: "/services",
       title: "Services",
     },
     {
