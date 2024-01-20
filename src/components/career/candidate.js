@@ -2,6 +2,7 @@ import { Grid, Input, Text, Textarea } from "@nextui-org/react";
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { FaUpload } from "react-icons/fa";
 
 export const CandidateForm = () => {
   return (
@@ -62,13 +63,27 @@ export const CandidateForm = () => {
                 fullWidth
               />
             </Grid>
-
-            <Grid>
+            <Grid css={{ marginTop: "20px" }}>
               <Textarea
                 label={<span style={{ fontSize: "18px" }}>Message</span>}
                 placeholder=""
                 fullWidth
               />
+            </Grid>{" "}
+            <Grid>
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <FaUpload
+                  style={{ marginRight: "10px", cursor: "pointer" }}
+                  onClick={() => document.getElementById("fileInput").click()}
+                />
+                <span
+                  style={{ cursor: "pointer", color: "#3c8a2e" }}
+                  onClick={() => document.getElementById("fileInput").click()}
+                >
+                  Piéce jointe
+                </span>
+                <input type="file" id="fileInput" style={{ display: "none" }} />
+              </div>
             </Grid>
             <br></br>
             <Grid className="row block">
