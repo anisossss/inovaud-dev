@@ -39,21 +39,16 @@ export const Footer = () => {
                   width={20}
                   height={20}
                 />
-                &nbsp; INOVAUD, Rue du Port-Franc 22, 1003 Lausanne
+                <br></br> &nbsp; Rue du Port-Franc 22
+                <br></br> &nbsp; 1003 Lausanne, Suisse
               </div>
             </a>
 
             <a
-              href="tel:+41791924259"
-              className="text-white  font-semibold block pb-2 "
-            >
-              + 41 79 192 42 59
-            </a>
-            <a
               href="mailto:info@inovaud-sa.com"
               className="text-white  font-semibold block pb-2 "
             >
-              info@inovaud-sa.com
+              &nbsp; &nbsp; &nbsp; &nbsp; info@inovaud-sa.com
             </a>
           </Grid>
 
