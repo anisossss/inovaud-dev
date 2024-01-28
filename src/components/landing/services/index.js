@@ -98,14 +98,18 @@ export const ServicesCards = () => {
                 </Fade>
 
                 <Card.Body
-                  css={{ justifyContent: "center", alignItems: "center" }}
+                  css={{
+                    justifyContent: "center",
+                    alignItems: "center",
+                    marginTop: "7em",
+                  }}
                 >
                   <Text
                     span
                     css={{ textAlign: "center", width: "50%" }}
-                    size={"$xl"}
+                    size={"$md"}
                   >
-                    {text}{" "}
+                    {text}
                   </Text>
                 </Card.Body>
               </Card>

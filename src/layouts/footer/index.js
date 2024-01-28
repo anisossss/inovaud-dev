@@ -52,7 +52,7 @@ export const Footer = () => {
             </a>
           </Grid>
 
-          <Grid className="w-full lg:w-8/12 px-12 mt-12">
+          <Grid className="w-full lg:w-8/12 px-12 ">
             <Grid className="flex flex-wrap items-top mb-6">
               <Grid className="w-full lg:w-4/12 px-4 ml-auto">
                 <Text
